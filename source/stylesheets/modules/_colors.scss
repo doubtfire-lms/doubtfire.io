@@ -4,7 +4,7 @@ $grey-border-color: #e6e6e6;
 
 // My project colors
 $mp-color-highlight: #82B1FF;
-$mp-color-primary: #1E88E5;
+$mp-color-primary: #DA532F;
 $mp-color-secondary: #0D47A1;
-$mp-color-bg-dark: $mp-color-primary;
-$mp-color-bg-light: lighten($mp-color-primary, 25%);
+$mp-color-bg-dark: lighten(#273043, 20%);
+$mp-color-bg-light: darken(#9197AE, 10%);
