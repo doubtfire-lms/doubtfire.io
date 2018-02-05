@@ -1,0 +1,11 @@
+$mp-logo-aspect-ratio-w: 15;
+$mp-logo-aspect-ratio-h: 16;
+
+.mp-logo {
+  background-image: url('/images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: $mp-logo-aspect-ratio-w;
+  height: $mp-logo-aspect-ratio-h;
+}

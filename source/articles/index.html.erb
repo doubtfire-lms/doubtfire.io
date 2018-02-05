@@ -1,0 +1,26 @@
+---
+# Store article categories as a list containing the category, its name,
+# description and icon.
+categories:
+  -
+    title:        Installing MyProject
+    description:  Installation Guides
+    icon:         fa-download
+    href:         /articles/installation
+  -
+    title:        Using MyProject
+    description:  Examples
+    icon:         fa-code
+    href:         /articles/guides
+  -
+    title:        Contributing
+    description:  Extend MyProject
+    icon:         fa-plus
+    href:         /articles/contributing
+---
+
+<ul class="mp-grid">
+  <% current_page.data.categories.each do |category| %>
+    <%= partial 'partials/grid_item', locals: category %>
+  <% end %>
+</ul>

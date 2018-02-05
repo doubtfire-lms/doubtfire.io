@@ -1,0 +1,13 @@
+copyright_notice: |
+  MyProject is an open source project maintained by the <a href="https://github.com/orgs/MyProject/people">core team</a> with the help of all <a href="http://github.com/MyProject/MyProject/MyProject/graphs/contributors">our contributors</a>.
+  Except as otherwise noted, MyProject is licensed under <a href="https://www.gnu.org/licenses/gpl-3.0.en.html#content">GPL</a>.
+links:
+  -
+    title: MyProject
+    href: http://myproject.io
+  -
+    title: Github
+    href: https://www.github.com/MyProject/MyProject
+  -
+    title: Twitter
+    href: http://twitter.com/MyProject

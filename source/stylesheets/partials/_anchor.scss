@@ -1,0 +1,15 @@
+a:hover, a:active, a:focus {
+  outline: 0px;
+}
+// Color for anchorjs link
+a.anchorjs-link {
+  color: $mp-color-secondary;
+  &:hover {
+    color: darken($mp-color-secondary, 20%);
+    text-decoration: none;
+  }
+}
+// Code anchor - remove applied red
+a > code {
+  color: revert;
+}
