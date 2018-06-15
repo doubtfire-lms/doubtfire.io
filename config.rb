@@ -11,10 +11,6 @@
 # Helpers
 ###
 
-set :http_prefix, '/doubtfire.io'
-set :site_url, "https://doubtfire-lms.github.io/doubtfire.io"
-set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
-
 activate :relative_assets
 set :relative_links, true
 
