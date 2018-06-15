@@ -1,5 +1,5 @@
 <li class="mp-grid-item">
-  <% link_to config.site_url + href, class: "mp-grid-btn" do %>
+  <% link_to "#{config.site_url}/#{href}", class: "mp-grid-btn" do %>
     <% unless icon.nil? %>
       <i class="fa <%= icon %>"></i>
     <% end %>
