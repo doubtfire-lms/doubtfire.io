@@ -1,6 +1,17 @@
+<%
+  def tag_description(name)
+    data.tags.each do |tag_data|
+      return tag_data.description if tag_data.tag == name
+    end
+    return ""
+  end
+%>
 <h1><%= tagname.to_title_case.to_human_case %> Guides</h1>
+<p>
+  <%= tag_description(tagname) %>
+</p>
 <p class="lead">
-  <%= articles.count %> article<%= articles.count > 1 ? 's' : ''%>
+  <%= articles.count %> article<%= articles.count > 1 ? 's' : ''%>>
 </p>
 <% articles.sort_by(&:date).each do |article| %>
   <% link_to article, class: 'mp-article-link'  do %>
