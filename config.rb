@@ -82,13 +82,13 @@ end
 ###
 
 # Specify the root layout to index
-page 'index.html', layout: :index
+page '/index.html', layout: :index
 
 # Specify layouts for subdirectories of articles _in order_ of application
-page 'articles/installation/**/step*', layout: :'articles/installation'
-page 'articles/installation/*', layout: :'articles/index'
-page 'articles/guides/index.html', layout: :'articles/index'
-page 'articles/guides/tags/*', layout: :'articles/guides'
-page 'articles/guides/tags/**/*', layout: :'articles/guides'
-page 'articles/contributing/*', layout: :'articles/index'
-page 'articles/index.html', layout: :'articles/index'
+page '/articles/installation/**/step*', layout: :'articles/installation'
+page '/articles/installation/*', layout: :'articles/index'
+page '/articles/guides/index.html', layout: :'articles/index'
+page '/articles/guides/tags/*', layout: :'articles/guides'
+page '/articles/guides/tags/**/*', layout: :'articles/guides'
+page '/articles/contributing/*', layout: :'articles/index'
+page '/articles/index.html', layout: :'articles/index'
