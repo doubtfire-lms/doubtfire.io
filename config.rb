@@ -11,6 +11,8 @@
 # Helpers
 ###
 
+set :site_url, "https://doubtfire-lms.github.io/doubtfire.io"
+
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
 
