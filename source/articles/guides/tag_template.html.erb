@@ -14,7 +14,7 @@
   <%= articles.count %> article<%= articles.count > 1 ? 's' : ''%>
 </p>
 <% articles.sort_by(&:date).each do |article| %>
-  <% link_to article, relative: false, class: "mp-article-link" do %>
+  <% link_to article, class: "mp-article-link" do %>
     <h4><%= article.title %></h4>
     <h4 class="lead text-muted">
       Written by <%= article.metadata[:page][:author] %> on
