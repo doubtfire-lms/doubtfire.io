@@ -33,6 +33,8 @@ end
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
+  set :site_url, "http://localhost:4567"
+  set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
 end
 
 # Methods defined in the helpers block are available in templates
