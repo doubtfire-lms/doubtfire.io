@@ -59,15 +59,15 @@ Now you are set to review the work in the student portfolio, select the **View P
 
 1. Select **View Portfolio**, and the page will download and display the portfolio for you to review.
 1. The PDF will appear in a viewer as the main body of the panel. You can scroll to view different sections.
-    
+
     The portfolio will start with the learning summary report. This should outline the grade the student is applying for, and how they believe they have met this grade. Reflections within this report should confirm the general picture you received in the view progress page.
 
     Following the learning summary report is a table of contents that will allow you to switch to any of the tasks the student has included. You can click the items in the table to jump to that part of the PDF.
 
     Use the status and importance of a task to determine which tasks to review.
-  
+
     Tasks signed off as Complete, Discuss, or Demonstrate should not need to be checked. These have been checked and indicated that they meet the desired qualities. Items still on Discuss or Demonstrate at this point have been checked, but the student has not subsequently discussed or demonstrated these to their tutor.
-  
+
     Other tasks may need to be checked. In general you should have key tasks that you will focus on, if they are not complete you will need to check to see determine which grade to assign.
 
 1. If needed, you can download the Portfolio PDF.
@@ -85,10 +85,10 @@ The final step is then to enter the grade for the student.
 1. Select the grade to associate with the work presented.
 
     Numberic grades are setup so that the difference between grade bands is larger than the difference within the grade. 
-    
+
     In general the x3, x5, x7 (eg 53, 55, 57) are the main scores awarded for a particular grade. These represent poor, average, and good outcomes within that grade band. Qualities necessary for higher scores should be indicated in the unit assessment criteria, and can include things like quality of reflections, timeliness of submissions, quality of work, other factors, or a combination of these.
 
-    The 50,60,70, and 80 scores are used as indicating a borderline result - something only just sufficient for that grade.
+    The 50, 60, 70, and 80 scores are used as indicating a borderline result - something only just sufficient for that grade.
 
     Clicking the button will record the score and save the rationale. If you update the rationale, remember to reselect the grade to save both.
 
