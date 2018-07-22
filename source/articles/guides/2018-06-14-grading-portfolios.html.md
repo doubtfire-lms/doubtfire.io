@@ -84,7 +84,7 @@ The final step is then to enter the grade for the student.
 1. Enter a **rationale**. This is text for other teaching staff in the units to help indicate why that particular grade was awarded. This is not shown to students, but can be used if a students wants to review their grades.
 1. Select the grade to associate with the work presented.
 
-    Numberic grades are setup so that the difference between grade bands is larger than the difference within the grade. 
+    Numeric grades are setup so that the difference between grade bands is larger than the difference within the grade. 
 
     In general the x3, x5, x7 (eg 53, 55, 57) are the main scores awarded for a particular grade. These represent poor, average, and good outcomes within that grade band. Qualities necessary for higher scores should be indicated in the unit assessment criteria, and can include things like quality of reflections, timeliness of submissions, quality of work, other factors, or a combination of these.
 
