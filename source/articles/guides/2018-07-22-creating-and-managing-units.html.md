@@ -33,7 +33,7 @@ Now that the unit is created, there are a number of settings which must be popul
 
 Enter all details:
 
-  *  Unit Code
+  * Unit Code
   * Unit Name
   * Unit Description
   * Start Date
