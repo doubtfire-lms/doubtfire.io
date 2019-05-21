@@ -50,7 +50,7 @@ require_all 'lib/core_ext'
 activate :sprockets
 
 # Import CSS/SCSS
-set :css_dir, 'stylesheets'
+set :css_dir, 'doubtfire.io/stylesheets'
 activate :autoprefixer
 
 # Import JavaScript
