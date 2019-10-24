@@ -1,11 +1,17 @@
-# Writing a Guide for Doubtfire
+---
+
+title: Writing a guide for Doubtfire
+date: 2019-04-20 04:44 UTC
+tags: contributing
+
+---
 
 This tutorial will cover the details of how to write guide for the Doubtfire website.
 
 You will need:
 
   1. a [GitHub](http://github.com) account,
-  2. a Ruby development environment (v2.3.1) to build the website,
+  2. a Ruby development environment to build the website,
   3. an awesome idea for a guide!
 
 ## Getting Ready
@@ -88,6 +94,16 @@ summary: |
 
 ```
 
+## Provide valid tags
+
+The tags are used to position the article within the website. The following tags are commonly used
+
+- `staff_guides` - the article will appear as a guide for staff
+- `student_guides` - the article will appear as a guide for students
+- `contributing` - the article relates to writing code or articles for Doubtfire
+- `unit_chair_guides` - the article is for people who run units
+- `all_users` - the guide is for any user of Doubtfire
+
 ## Write the guide
 
 Underneath the bottom three dashes, you may begin writing your guide using [Github-flavoured Markdown](https://guides.github.com/features/mastering-markdown/). You won't need to add the title of the guide as a Heading 1 (`<h1>` or `#`) as this is automatically added for you.
@@ -109,7 +125,7 @@ After you have finished writing, it's time to make sure everything looks right!
 From your terminal, where you created the guide, run the following command to start running the website locally:
 
 ```
-bundle exec middleman
+bundle exec middleman serve
 ```
 
 Now, visit [`http://localhost:4567`](http://localhost:4567) to see the website.
@@ -129,3 +145,4 @@ To do this, push your changes via GitHub, and visit the GitHub webiste for your 
 Doubtfire is completely open source, and free to use &mdash; any contributions to the project are appreciated!
 
 If at any stage of this process you run into any issues, feel free to raise an issue on GitHub.
+

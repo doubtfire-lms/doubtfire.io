@@ -1,5 +1,5 @@
 <ul class="mp-grid">
-  <% blog.tags.keys.each do |tag| %>
+  <% blog.tags.keys.select{|t| t != 'contributing'}.each do |tag| %>
     <%= partial 'partials/grid_item', locals: {
       title: tag.to_title_case.to_human_case,
       description: 'Articles & Guides',
