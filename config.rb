@@ -11,15 +11,13 @@
 # Helpers
 ###
 
-set :site_url, ""
-
+set :site_url, ''
 configure :build do
   set :http_prefix, '/doubtfire.io'
-  set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
 end
 
-activate :relative_assets
-set :relative_links, true
+# activate :relative_assets
+set :relative_links, false
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
@@ -37,7 +35,6 @@ end
 configure :development do
   activate :livereload
   set :site_url, "http://localhost:4567"
-  set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
 end
 
 # Methods defined in the helpers block are available in templates

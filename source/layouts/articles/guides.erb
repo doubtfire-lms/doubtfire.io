@@ -5,7 +5,7 @@
       <ul class="nav mp-article-nav-root">
         <% blog.tags.keys.each do |tag| %>
           <li class="nav-item">
-            <% link_to "/articles/guides/tags/#{tag}",
+            <% link_to "/articles/guides/tags/#{tag}/index.html",
                class: "nav-link #{current_page.path.downcase.end_with?(tag + '.html') ? 'active' : ''}" do %>
               <%= tag.to_title_case.to_human_case %>
             <% end %>
