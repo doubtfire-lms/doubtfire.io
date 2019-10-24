@@ -11,12 +11,13 @@
 # Helpers
 ###
 
-set :http_prefix, '/doubtfire.io'
-set :site_url, "https://doubtfire-lms.github.io/doubtfire.io"
-set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
+set :site_url, ''
+configure :build do
+  set :http_prefix, '/doubtfire.io'
+end
 
-activate :relative_assets
-set :relative_links, true
+# activate :relative_assets
+set :relative_links, false
 
 # Automatic image dimensions on image_tag helper
 activate :automatic_image_sizes
@@ -34,7 +35,6 @@ end
 configure :development do
   activate :livereload
   set :site_url, "http://localhost:4567"
-  set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
 end
 
 # Methods defined in the helpers block are available in templates
@@ -50,7 +50,7 @@ require_all 'lib/core_ext'
 activate :sprockets
 
 # Import CSS/SCSS
-set :css_dir, 'doubtfire.io/stylesheets'
+set :css_dir, 'stylesheets'
 activate :autoprefixer
 
 # Import JavaScript
@@ -92,5 +92,4 @@ page '/articles/installation/*', layout: :'articles/index'
 page '/articles/guides/index.html', layout: :'articles/index'
 page '/articles/guides/tags/*', layout: :'articles/guides'
 page '/articles/guides/tags/**/*', layout: :'articles/guides'
-page '/articles/contributing/*', layout: :'articles/index'
 page '/articles/index.html', layout: :'articles/index'
