@@ -11,7 +11,7 @@
 # Helpers
 ###
 
-# set :http_prefix, '/doubtfire.io'
+set :http_prefix, '/doubtfire.io'
 set :site_url, "https://doubtfire-lms.github.io/doubtfire.io"
 set :asset_host, :host => "//doubtfire-lms.github.io/doubtfire.io"
 
@@ -50,7 +50,7 @@ require_all 'lib/core_ext'
 activate :sprockets
 
 # Import CSS/SCSS
-set :css_dir, 'stylesheets'
+set :css_dir, 'doubtfire.io/stylesheets'
 activate :autoprefixer
 
 # Import JavaScript
