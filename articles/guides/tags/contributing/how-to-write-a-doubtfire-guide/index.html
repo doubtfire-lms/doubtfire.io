@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="img/ico" href="../images/favicon.ico">
 
-    <title>Doubtfire - Articles - Contributing</title>
+    <title>Doubtfire - Articles - Guides - Tags - Contributing - How To Write A Doubtfire Guide</title>
 
-    <link href="../../doubtfire.io/doubtfire.io/stylesheets/main.css" rel="stylesheet" />
+    <link href="/doubtfire.io/stylesheets/main.css" rel="stylesheet" />
   </head>
-  <body class="articles articles_contributing articles_contributing_index">
+  <body class="articles articles_guides articles_guides_tags articles_guides_tags_contributing articles_guides_tags_contributing_how-to-write-a-doubtfire-guide articles_guides_tags_contributing_how-to-write-a-doubtfire-guide_index">
     <nav class="navbar navbar-dark mp-navbar">
   <button class="navbar-toggler collapsed hidden-md-up" type="button" data-toggle="collapse" data-target="#global-navbar-content" aria-controls="global-navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa mp-navbar-toggler-icon"></i>
   </button>
   <div class="collapse container navbar-toggleable-sm" id="global-navbar-content">
-    <a class="navbar-brand" href="https://doubtfire-lms.github.io/doubtfire.io">Doubtfire</a>
+    <a class="navbar-brand" href="">Doubtfire</a>
     <ul class="nav navbar-nav">
       <li class="nav-item">
-        <a class="nav-link " href="/articles">Articles &amp; Guides</a>
+        <a href="/doubtfire.io/articles/" class="nav-link ">Articles & Guides</a>
       </li>
     </ul>
   </div>
@@ -30,15 +30,37 @@
     <main id="content">
         <div class="container">
     <div class="row">
-      <h1>Writing a Guide for Doubtfire</h1>
-
-<p>This tutorial will cover the details of how to write guide for the Doubtfire website.</p>
+        <h1>Writing a guide for Doubtfire</h1>
+        <aside class="mp-sidebar">
+    <h3>All Guides</h3>
+    <nav role="navigation">
+      <ul class="nav mp-article-nav-root">
+          <li class="nav-item">
+<a href="/doubtfire.io/articles/guides/tags/contributing/" class="nav-link ">              Contributing
+</a>          </li>
+          <li class="nav-item">
+<a href="/doubtfire.io/articles/guides/tags/staff_guides/" class="nav-link ">              Staff Guides
+</a>          </li>
+          <li class="nav-item">
+<a href="/doubtfire.io/articles/guides/tags/all_users/" class="nav-link ">              All Users
+</a>          </li>
+          <li class="nav-item">
+<a href="/doubtfire.io/articles/guides/tags/unit_chair_guides/" class="nav-link ">              Unit Chair Guides
+</a>          </li>
+          <li class="nav-item">
+<a href="/doubtfire.io/articles/guides/tags/student_guides/" class="nav-link ">              Student Guides
+</a>          </li>
+      </ul>
+    </nav>
+  </aside>
+  <article class="mp-content">
+    <p>This tutorial will cover the details of how to write guide for the Doubtfire website.</p>
 
 <p>You will need:</p>
 
 <ol>
 <li>a <a href="http://github.com">GitHub</a> account,</li>
-<li>a Ruby development environment (v2.3.1) to build the website,</li>
+<li>a Ruby development environment to build the website,</li>
 <li>an awesome idea for a guide!</li>
 </ol>
 
@@ -110,6 +132,18 @@
 <span class="s">---</span>
 
 </code></pre></div>
+<h2>Provide valid tags</h2>
+
+<p>The tags are used to position the article within the website. The following tags are commonly used</p>
+
+<ul>
+<li><code>staff_guides</code> - the article will appear as a guide for staff</li>
+<li><code>student_guides</code> - the article will appear as a guide for students</li>
+<li><code>contributing</code> - the article relates to writing code or articles for Doubtfire</li>
+<li><code>unit_chair_guides</code> - the article is for people who run units</li>
+<li><code>all_users</code> - the guide is for any user of Doubtfire</li>
+</ul>
+
 <h2>Write the guide</h2>
 
 <p>Underneath the bottom three dashes, you may begin writing your guide using <a href="https://guides.github.com/features/mastering-markdown/">Github-flavoured Markdown</a>. You won&rsquo;t need to add the title of the guide as a Heading 1 (<code>&lt;h1&gt;</code> or <code>#</code>) as this is automatically added for you.</p>
@@ -129,7 +163,7 @@
 <p>After you have finished writing, it&rsquo;s time to make sure everything looks right!</p>
 
 <p>From your terminal, where you created the guide, run the following command to start running the website locally:</p>
-<div class="highlight"><pre class="highlight plaintext"><code>bundle exec middleman
+<div class="highlight"><pre class="highlight plaintext"><code>bundle exec middleman serve
 </code></pre></div>
 <p>Now, visit <a href="http://localhost:4567"><code>http://localhost:4567</code></a> to see the website.</p>
 
@@ -150,6 +184,8 @@
 <p>Doubtfire is completely open source, and free to use &mdash; any contributions to the project are appreciated!</p>
 
 <p>If at any stage of this process you run into any issues, feel free to raise an issue on GitHub.</p>
+
+  </article>
 
     </div>
   </div>
@@ -174,6 +210,6 @@
   </div>
 </footer>
 
-    <script src="../../doubtfire.io/javascripts/main.js"></script>
+    <script src="/doubtfire.io/javascripts/main.js"></script>
   </body>
 </html>
