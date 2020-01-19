@@ -2,14 +2,49 @@
 
 title: Installing Doubtfire on Ubuntu
 tags: installation,ubuntu
+date: 2020-01-19 20:00 AEST
+author: Jacob Taylor
+author_url: https://github.com/Justfeedme
 
 ---
 
-To get Doubtfire installed on Ubuntu, follow the steps below:
+There are multiple ways to deploy Doubtfire to an Ubuntu development environment: using a pre-packaged Doubtfire Virtual machine, automating the process using the installation scripts, or through a process of manually installing individual Doubtfire components and dependencies.
+
+## Pre-packaged Virtual Machine
+
+If you are new to the Doubtfire project, there is a pre-packaged virual machine that contains a fully-functional instance of Doubtfire.
+This method of installation offers a quick, no fuss way to experiment with Doubtfire; to see what a functional installation should look like.
+It allows you to interact with both the back-end API and the web interface, to test user functionality for the various user roles, and to familiarise yourself with the codebase.
+However, installation through this method is limited:
+
+- To minimise the size of the virtual machine itself, the virtualised instance of Doubtfire does not contain Latex, meaning that the platform's PDF functionality will not work.
+- The virtual hard disk allocated to the machine has also been limited to the size required for a bare-bones Doubtfire installation.
+- VirtualBox's overheads may impair the performance of Doubtfire software; it is recommended you run Doubtfire with an allocated hard drive of 20 GB or more, and with 4 GB or more of RAM.
+
+
+This installation method requires you to install the VirtualBox software onto your host machine.
+VirtualBox is an open-source hypervisor developed by Oracle.
+It effectively emulates the hardware of a computer, within your existing computer and operating system--allowing you to run a computer within a computer.
+Installation instructions are available through the [VirtualBox website](https://www.virtualbox.org/).
+Note: it may also be possible to install the packaged virtual machine using another hypervisor by exporting/importing the provided virtual machine.
+This method has not been tested.
+
+Once VirtualBox has been installed, download the [Doubtfire Virtual Machine](https://deakin365-my.sharepoint.com/:u:/g/personal/jwtayl_deakin_edu_au/Ea5v4lk7mqZKi4bs9-sykoIBvtC9YY6JrYtneqIrp899fw?e=xJ0aH).
+
+## Automated Installation Scripts
+
+The automated installation scripts are the simplest way to install Doubtfire using Ubuntu as your fully-fledged development environment.
+
+To begin, you will first need to clone the `doubtfire-web`, `doubtfire-api`, and `doubtfire.io` repositories.
+Before doing so, you should fork each of these respositories to your own Github account, to allow your own development and enable the creation of pull requests at a later stage.
+You should also consider 
+
+
+
 
 <% current_page.children.sort_by(&:url).each_with_index do |step, i| %>
-- **[Step <%= i %>](<%= step.url %>)**: <%= step.data.title %>
+- **[Step <%= i+1 %>](<%= step.url %>)**: <%= step.data.title %>
 <% end %>
 
-Once you have all of these steps complete you should be setup and ready to
+Once you have all of these steps complete you should be setup and ready to begin
 using Doubtfire.
