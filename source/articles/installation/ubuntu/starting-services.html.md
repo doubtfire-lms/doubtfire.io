@@ -1,0 +1,36 @@
+---
+
+title: Ubuntu Starting Doubtfire Services
+tags: installation,ubuntu
+date: 2020-01-19 20:00 AEST
+author: Jacob Taylor
+
+---
+
+Now that Ubuntu is running, we need to start Doubtfire.
+First we'll initialise the API.
+Open a terminal window, and navigate to ***~/Doubtfire/doubtfire-api/***.
+Initialise the API by executing ***bundle exec rails s***.
+This will spawn a rails process listening on ***localhost:3000***.
+
+<img alt="Executing Rails" src="/images/articles/installation/ubuntu/3.png" style="width: 700px; display:block; margin: 0 auto;"></img>
+
+You can verify that the API is functional, and also interact with the API through the Swagger utility.
+Access this utility by opening Firefox, and navigating to ***http://localhost:3000/api/docs/***.
+
+<img alt="Swagger API" src="/images/articles/installation/ubuntu/4.png" style="width: 700px; display:block; margin: 0 auto;"></img>
+
+We will now start the NodeJS environment to host the Doubtfire web interface.
+To do so, open a new tab within your terminal window, and navigate to ***~/Doubtfire/doubtfire-web/***.
+Then execute ***npm start***.
+
+<img alt="Starting npm" src="/images/articles/installation/ubuntu/5.png" style="width: 700px; display:block; margin: 0 auto;"></img>
+
+This will spawn a web server hosting the Doubtfire web interface, accessible at ***http://localhost:4200/***.
+From here, you should experiment with both the API and the web interface.
+It has been populated with dummy data, allowing you interact with the system to understand its functionality.
+The default password is ***password***, and one user account on the system is ***aadmin***.
+
+<img alt="Doubtfire Web" src="/images/articles/installation/ubuntu/6.png" style="width: 700px; display:block; margin: 0 auto;"></img>
+
+

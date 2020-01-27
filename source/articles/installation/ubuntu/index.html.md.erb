@@ -8,77 +8,15 @@ author_url: https://github.com/Justfeedme
 
 ---
 
-There are multiple ways to deploy Doubtfire to an Ubuntu development environment: using a pre-packaged Doubtfire Virtual machine, automating the process using the installation scripts, or through a process of manually installing individual Doubtfire components and dependencies.
+There are multiple ways to deploy Doubtfire to an Ubuntu development environment: using a pre-packaged Doubtfire Virtual machine, automating the process using the installation scripts, or through a process of manually installing individual Doubtfire components and dependencies. Visit one of the below links to explore your preferred method of installation:
 
-## Pre-packaged Virtual Machine
+- [Pre-packaged Virtual Machine](./virtual-machine/)
+- [Automated Installation Scripts](./installation-scripts/)
+- [Manual Installation](./manual-installation/)
 
-If you are new to the Doubtfire project, there is a pre-packaged virtual machine that contains a fully-functional instance of Doubtfire.
-This method of installation offers a quick, no fuss way to experiment with Doubtfire; to see what a functional installation should look like.
-It allows you to interact with both the back-end API and the web interface, to test user functionality for the various user roles, and to familiarise yourself with the codebase.
-However, installation through this method is limited:
+Once you have completed the installation process using your selected method, you will then need to start Doubtfire's respective services.
+This process is described in the following link:
 
-- To minimise the size of the virtual machine itself, the virtualised instance of Doubtfire does not contain Latex, meaning that the platform's PDF functionality will not work.
-- The virtual hard disk allocated to the machine has also been limited to the size required for a bare-bones Doubtfire installation.
-- VirtualBox's overheads may impair the performance of Doubtfire software; it is recommended you run Doubtfire with an allocated hard drive of 20 GB or more, and with 4 GB or more of RAM.
-
-This installation method requires you to install the VirtualBox software onto your host machine.
-VirtualBox is an open-source hypervisor developed by Oracle.
-It effectively emulates the hardware of a computer, within your existing computer and operating system--allowing you to run a computer within a computer.
-Installation instructions are available through the [VirtualBox website](https://www.virtualbox.org/).
-Note: it may also be possible to install the packaged virtual machine using another hypervisor by exporting/importing the provided virtual machine.
-This method has not been tested.
-
-Once VirtualBox has been installed, download the [Doubtfire Virtual Machine](https://deakin365-my.sharepoint.com/:u:/g/personal/jwtayl_deakin_edu_au/Ea5v4lk7mqZKi4bs9-sykoIBvtC9YY6JrYtneqIrp899fw?e=xJ0aH).
-Import the Virtual Machine into VirtualBox using the import utility, as depicted below.
-
-<img alt="Virtual Machine Import" src="/images/articles/installation/ubuntu/1.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-Once the Virtual Machine has been imported, starting the machine should load Ubuntu desktop.
-Note that ***doubtfire*** is both the username *and* password for this Ubuntu machine.
-
-<img alt="Ubuntu Desktop" src="/images/articles/installation/ubuntu/2.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-## Automated Installation Scripts
-
-The automated installation scripts are the simplest way to install Doubtfire using Ubuntu as your fully-fledged development environment.
-
-To begin, you will first need to clone the `doubtfire-web`, `doubtfire-api`, and `doubtfire.io` repositories.
-Before doing so, you should fork each of these respositories to your own Github account, to allow your own development and enable the creation of pull requests at a later stage.
-You should also consider 
-
-## Manual Installation
-
-Please refer to respective Wiki and Readme.md pages in [Doubtfire's Github](https://github.com/doubtfire-lms/) `doubtfire-web`, `doubtfire-api`, and `doubtfire.io` repositories.
-These details will be included in this guide in future updates.
-
-## Starting the services
-
-Now that Ubuntu is running, we need to start Doubtfire.
-First we'll initialise the API.
-Open a terminal window, and navigate to ***~/Doubtfire/doubtfire-api/***.
-Initialise the API by executing ***bundle exec rails s***.
-This will spawn a rails process listening on ***localhost:3000***.
-
-<img alt="Executing Rails" src="/images/articles/installation/ubuntu/3.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-You can verify that the API is functional, and also interact with the API through the Swagger utility.
-Access this utility by opening Firefox, and navigating to ***http://localhost:3000/api/docs/***.
-
-<img alt="Swagger API" src="/images/articles/installation/ubuntu/4.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-We will now start the NodeJS environment to host the Doubtfire web interface.
-To do so, open a new tab within your terminal window, and navigate to ***~/Doubtfire/doubtfire-web/***.
-Then execute ***npm start***.
-
-<img alt="Starting npm" src="/images/articles/installation/ubuntu/5.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-This will spawn a web server hosting the Doubtfire web interface, accessible at ***http://localhost:4200/***.
-From here, you should experiment with both the API and the web interface.
-It has been populated with dummy data, allowing you interact with the system to understand its functionality.
-The default password is ***password***, and one user account on the system is ***aadmin***.
-
-<img alt="Doubtfire Web" src="/images/articles/installation/ubuntu/6.png" style="width: 700px; display:block; margin: 0 auto;"></img>
-
-## Conclusion
+- [Starting Doubtfire's Services](./starting-services/)
 
 Once you have all of these steps complete you should be setup and ready to begin using and contributing to Doubtfire!
