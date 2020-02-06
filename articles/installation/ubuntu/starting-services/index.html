@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="img/ico" href="../images/favicon.ico">
+
+    <title>Doubtfire - Articles - Installation - Ubuntu - Starting Services</title>
+
+    <link href="/doubtfire.io/stylesheets/main.css" rel="stylesheet" />
+  </head>
+  <body class="articles articles_installation articles_installation_ubuntu articles_installation_ubuntu_starting-services articles_installation_ubuntu_starting-services_index">
+    <nav class="navbar navbar-dark mp-navbar">
+  <button class="navbar-toggler collapsed hidden-md-up" type="button" data-toggle="collapse" data-target="#global-navbar-content" aria-controls="global-navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa mp-navbar-toggler-icon"></i>
+  </button>
+  <div class="collapse container navbar-toggleable-sm" id="global-navbar-content">
+    <a class="navbar-brand" href="">Doubtfire</a>
+    <ul class="nav navbar-nav">
+      <li class="nav-item">
+        <a href="/doubtfire.io/articles/" class="nav-link ">Articles & Guides</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <main id="content">
+        <div class="container">
+    <div class="row">
+        <h1>Ubuntu Starting Doubtfire Services</h1>
+      <p>Now that Ubuntu is running, we need to start Doubtfire.
+First we&rsquo;ll initialise the API.
+Open a terminal window, and navigate to <strong><em>~/Doubtfire/doubtfire-api/</em></strong>.
+Initialise the API by executing <strong><em>bundle exec rails s</em></strong>.
+This will spawn a rails process listening on <strong><em>localhost:3000</em></strong>.</p>
+
+<p><img alt="Executing Rails" src="/images/articles/installation/ubuntu/3.png" style="width: 700px; display:block; margin: 0 auto;"></img></p>
+
+<p>You can verify that the API is functional, and also interact with the API through the Swagger utility.
+Access this utility by opening Firefox, and navigating to <strong><em>http://localhost:3000/api/docs/</em></strong>.</p>
+
+<p><img alt="Swagger API" src="/images/articles/installation/ubuntu/4.png" style="width: 700px; display:block; margin: 0 auto;"></img></p>
+
+<p>We will now start the NodeJS environment to host the Doubtfire web interface.
+To do so, open a new tab within your terminal window, and navigate to <strong><em>~/Doubtfire/doubtfire-web/</em></strong>.
+Then execute <strong><em>npm start</em></strong>.</p>
+
+<p><img alt="Starting npm" src="/images/articles/installation/ubuntu/5.png" style="width: 700px; display:block; margin: 0 auto;"></img></p>
+
+<p>This will spawn a web server hosting the Doubtfire web interface, accessible at <strong><em>http://localhost:4200/</em></strong>.
+From here, you should experiment with both the API and the web interface.
+It has been populated with dummy data, allowing you interact with the system to understand its functionality.
+The default password is <strong><em>password</em></strong>, and one user account on the system is <strong><em>aadmin</em></strong>.</p>
+
+<p><img alt="Doubtfire Web" src="/images/articles/installation/ubuntu/6.png" style="width: 700px; display:block; margin: 0 auto;"></img></p>
+
+    </div>
+  </div>
+
+    </main>
+    <footer class="mp-footer">
+  <div class="container">
+    <ul class="mp-footer-links">
+        <li>
+          <a href="https://doubtfire-lms.github.io/doubtfire.io" target="_blank"> Doubtfire </a>
+        </li>
+        <li>
+          <a href="https://www.github.com/doubtfire-lms" target="_blank"> Github </a>
+        </li>
+    </ul>
+      <p>
+        Doubtfire is an open source project maintained by the <a href="https://github.com/orgs/doubtfire-lms/people">core team</a> with the help of all our <a href="https://github.com/doubtfire-lms/doubtfire-web/graphs/contributors">frontend</a> and <a href="https://github.com/doubtfire-lms/doubtfire-api/graphs/contributors">backend</a> contributors.
+      </p>
+      <p>
+        Except as otherwise noted, Doubtfire is licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html#content">GNU Affero General Public License (AGPL) v3</a>.
+      </p>
+  </div>
+</footer>
+
+    <script src="/doubtfire.io/javascripts/main.js"></script>
+  </body>
+</html>

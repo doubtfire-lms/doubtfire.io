@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="img/ico" href="../images/favicon.ico">
 
-    <title>Doubtfire - Articles - Installation - Ubuntu - Step 4</title>
+    <title>Doubtfire - Articles - Installation - Ubuntu - Installation Scripts</title>
 
     <link href="/doubtfire.io/stylesheets/main.css" rel="stylesheet" />
   </head>
-  <body class="articles articles_installation articles_installation_ubuntu articles_installation_ubuntu_step-4 articles_installation_ubuntu_step-4_index">
+  <body class="articles articles_installation articles_installation_ubuntu articles_installation_ubuntu_installation-scripts articles_installation_ubuntu_installation-scripts_index">
     <nav class="navbar navbar-dark mp-navbar">
   <button class="navbar-toggler collapsed hidden-md-up" type="button" data-toggle="collapse" data-target="#global-navbar-content" aria-controls="global-navbar-content" aria-expanded="false" aria-label="Toggle navigation">
     <i class="fa mp-navbar-toggler-icon"></i>
@@ -30,21 +30,23 @@
     <main id="content">
         <div class="container">
     <div class="row">
-        <h1>TODO - Step 4</h1>
-        <p class="lead">
-    Step 4 of 4
-  </p>
-  <hr>
-  <article class="mp-article">
-    <p>TODO: Write something for step 4.</p>
+        <h1>Ubuntu Automated Installation Scripts</h1>
+      <p>The automated installation scripts are the simplest way to install Doubtfire using Ubuntu as your fully-fledged development environment.</p>
 
-  </article>
-  <hr>
-  <nav>
-<a href="/doubtfire.io/articles/installation/ubuntu/step-3/" class="btn btn-sm btn-primary">        <i class="fa fa-chevron-left"></i>
-        <strong>Previous Step:</strong>
-        TODO - Step 3
-</a>  </nav>
+<p>To begin, you will first need to clone the <code>doubtfire-web</code>, <code>doubtfire-api</code>, and <code>doubtfire.io</code> repositories.
+Before doing so, you should fork each of these respositories to your own Github account, to allow your own development and enable the creation of pull requests at a later stage.
+If you are using Ubuntu within a virtualised development environment, you should also consider taking a snapshot of your machine before you begin this process.</p>
+
+<p>Once the repositories have been cloned to your local machine, in order, execute the <code>setup.sh</code> scripts located in each of the following directories:</p>
+
+<ul>
+<li><code>doubtfire-api</code>, </li>
+<li><code>doubtfire-web</code>, and</li>
+<li><code>doubtfire.io</code>.</li>
+</ul>
+
+<p>It is not necessary to execute the setup scripts with sudo privileges, although you will be prompted for your password throughout stages of the setup.
+You may be prompted for information or to continue the installation at various stages throughout the installation; simply respond as required.</p>
 
     </div>
   </div>
