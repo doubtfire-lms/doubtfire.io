@@ -21,6 +21,15 @@ by using the steps given below.
 <a id="doubtfire_api"></a>
 ####<strong>Installation of doubtfire API :</strong>
 ---
+#####Getting Started
+If you are a developer for the project, it is usually better to [create a fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) for the repository and then follow the steps given below.
+
+First, clone the doubtfire-api repository to your local machine:
+
+```
+$ git clone <link>
+```
+
 #####Steps Involed :
 
 [1. Install rbenv and ruby-build](#Install_rbenv_and_ruby_build)
@@ -37,7 +46,7 @@ by using the steps given below.
 
 ---
 <a id="Install_rbenv_and_ruby_build"></a>
-#####Install rbenv and ruby-build
+#####1.Install rbenv and ruby-build
 
 Install [rbenv](https://github.com/rbenv/rbenv) and ruby-build:
 
@@ -69,7 +78,7 @@ $ rbenv install 2.3.1
 ---
 
 <a id="Install_postgres"></a>
-#####Install Postgres
+#####2.Install Postgres
 
 Install [Postgres](https://www.postgresql.org/download/linux/):
 
@@ -97,7 +106,7 @@ CREATE ROLE itig WITH CREATEDB PASSWORD 'd872$dh' LOGIN;
 ```
 ---
 <a id="Install_native_tools"></a>
-#####Install native tools
+#####3.Install native tools
 
 Install `imagemagick`, `libmagic` and `ghostscript`. You will also need to install the Python `pygments` package:
 
@@ -111,7 +120,7 @@ $ sudo apt-get install ghostscript \
 
 ---
 <a id="Install_Doubtfire_API_dependencies"></a>
-#####Install Doubtfire API dependencies
+#####4.Install Doubtfire API dependencies
 
 Clone project and change your working directory to the api:
 
@@ -137,7 +146,7 @@ $ bundle install --without production replica staging
 
 ---
 <a id="Create_and_populate_Doubtfire"></a>
-#####Create and populate Doubtfire
+#####5.Create and populate Doubtfire
 
 Whilst still in the Doubtfire API project root, execute:
 
@@ -153,16 +162,10 @@ $ bundle exec rake db:populate
 
 ---
 <a id="Install_LaTeX_to_generate_PDFs"></a>
-#####Install LaTeX to generate PDFs
+#####6.Install LaTeX to generate PDFs
 
 Follow the [Generating PDFs](https://github.com/doubtfire-lms/doubtfire-api/wiki/Generating-PDFs) guide to assist with installing LaTeX to generate PDFs. This step is optional unless you wish to generate PDF submissions.
 
-
-You can clone this wiki locally by
-
-```
-https://github.com/doubtfire-lms/doubtfire-api.wiki.git
-```
 ---
 <a id="doubtfire_web"></a>
 ####<strong>Installation of doubtfire Web</strong>
@@ -171,10 +174,11 @@ https://github.com/doubtfire-lms/doubtfire-api.wiki.git
 Before you get started, make sure you have the [doubtfire-api](#doubtfire_api) up and running. You will need to do this before continuing.
 
 
+Usually if you are the developer, its always better to [create a fork](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) and then follow the below steps.
 Firstly we need to clone the web repository to your local machine by selecting "clone or download" and copying the link. You can do this by using command below and change to the root directory:
 
 ```
-$ git clone https://github.com/doubtfire-lms/doubtfire-web.git
+$ git clone <link>
 $ cd ./doubtfire-web
 ```
 Install [Node.js](https://nodejs.org/en/) either by [downloading it](https://nodejs.org/download/) and installing it manually by using `apt-get`
