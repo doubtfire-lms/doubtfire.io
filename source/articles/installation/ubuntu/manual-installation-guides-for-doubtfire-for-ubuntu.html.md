@@ -5,17 +5,15 @@ date: 2020-04-21 15:11 UTC
 tags: installation,ubuntu
 
 author: Jeevan loyd Fernandes
-summary: check to see the installation
+summary: See the steps involved in installing doubtfire-api, doubtfire-web and doubtfire-Io for Ubuntu Os.
 
 
 ---
-you can install 
+Use these steps to install 
 [doubtfire-api](#doubtfire_api),
 [doubtfire-web](#doubtfire_web) ,
 [doubtfire.io](#doubtfire_io)
-by using the steps given below.
  
-
 
 ---
 <a id="doubtfire_api"></a>
@@ -69,11 +67,11 @@ $ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 $ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
 ```
 
-Now install Ruby v2.3.1:
+Now install Ruby v2.3.8:
 
 ```
 $ sudo apt-get install -y libreadline-dev
-$ rbenv install 2.3.1
+$ rbenv install 2.3.8
 ```
 ---
 
@@ -83,9 +81,11 @@ $ rbenv install 2.3.1
 Install [Postgres](https://www.postgresql.org/download/linux/):
 
 ```
-$  sudo apt-get install postgresql \
+$  sudo apt-get install -y postgresql \
                         postgresql-contrib \
                         libpq-dev
+
+sudo service postgresql restart
 
 ```
 Ensure `pg_config` is on the `PATH`, and then login to Postgres. You will need to locate where `apt-get` has installed your Postgres binary and add this to your `PATH`. You can use `whereis psql` for that, but ensure you add the directory and not the executable to the path
@@ -111,11 +111,18 @@ CREATE ROLE itig WITH CREATEDB PASSWORD 'd872$dh' LOGIN;
 Install `imagemagick`, `libmagic` and `ghostscript`. You will also need to install the Python `pygments` package:
 
 ```
-$ sudo apt-get install ghostscript \
+sudo apt-get install -y ghostscript \
                        imagemagick \
                        libmagickwand-dev \
                        libmagic-dev \
-                       python-pygments
+                       python-pygments \
+                       ffmpeg \
+                       curl \
+		       libreadline-dev \
+		       gcc \
+		       make \
+		       libssl1.0-dev \
+		       zlib1g-dev
 ```
 
 ---
@@ -132,18 +139,18 @@ $ cd ./doubtfire-api
 Set up [overcommit](https://github.com/sds/overcommit) and install hooks:
 
 ```
-$ gem install overcommit
+$ gem install overcommit -v 0.47.0
 $ rbenv rehash
 $ overcommit --install
 ```
 Then install Doubtfire API dependencies using [bundler](https://bundler.io/):
 
 ```
-$ gem install bundler
-$ rbenv rehash
-$ bundle install --without production replica staging
+    gem install bundler -v 1.17.3
+    bundler install --without production replica staging
+    rbenv rehash
+    source ~/.bashrc
 ```
-
 ---
 <a id="Create_and_populate_Doubtfire"></a>
 #####5.Create and populate Doubtfire
@@ -163,6 +170,10 @@ $ bundle exec rake db:populate
 ---
 <a id="Install_LaTeX_to_generate_PDFs"></a>
 #####6.Install LaTeX to generate PDFs
+
+```
+sudo apt-get install texlive-full
+```
 
 Follow the [Generating PDFs](https://github.com/doubtfire-lms/doubtfire-api/wiki/Generating-PDFs) guide to assist with installing LaTeX to generate PDFs. This step is optional unless you wish to generate PDF submissions.
 
@@ -185,13 +196,13 @@ Install [Node.js](https://nodejs.org/en/) either by [downloading it](https://nod
 
 ```
 $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-$ sudo apt-get install nodejs
+$ sudo apt-get install -y nodejs
 ```
 Install [overcommit](https://github.com/sds/overcommit) and Ruby [SASS](https://sass-lang.com/):
 
 ```
 $ gem install overcommit sass
-```
+``` 
 If ```gem``` fails, you should read the [Doubfire API README](https://github.com/doubtfire-lms/doubtfire-api/blob/development/README.rdoc) doc to install ruby. If you are not using rbenv, e.g., using Docker instead, you may need to prepend sudo to the above commands to have root write access.
 
 If using ```rbenv```, rehash to ensure each of the gems are on your ```PATH```:
@@ -220,7 +231,7 @@ Lastly, to compile and run a watch server and web server, use `npm start`:
 $ npm start
 ```
 
-This will automatically run the angular 1 `grunt watch`, and the angular 7 `ng serve`.
+This will automatically run the angular 1 `grunt watch`, and the angular 9 `ng serve`.
 
 You can then navigate to the Doubtfire web interface at [http://localhost:8000](http://localhost:8000/).
 
@@ -261,6 +272,12 @@ Then, install [bundler](https://bundler.io/) to sort out your ruby dependencies:
 $ gem install bundler
 $ bundle install
 ```
+Once successfully installed, you can start the server using
+
+```
+bundle exec middleman serve
+```
+Then , Navigate to [http://localhost:4567](http://localhost:4567/) using Firefox
 
 ---
 Go to 
