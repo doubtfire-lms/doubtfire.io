@@ -13,11 +13,12 @@ install of Doubtfire on Windows, via the Windows Subsystem for Linux (WSL).
 This document will also entail how to properly modify the codebase (using Visual Studio Code), 
 such that no incompatibilities arise between the Windows and Linux filesystems.
 
-Visit the links below to begin:
-- []
+Before starting, visit the [requirements](./requirements) page and download all the required software:
 
-<% current_page.children.sort_by(&:url).each_with_index do |step, i| %>
-- **[Step <%= i %>](<%= step.url %>)**: <%= step.data.title %>
+Visit the links below to begin:
+
+<% current_page.children.sort_by(&:url)[1..-1].each do |step| %>
+- **[<%= step.data.title %>](<%= step.url %>)**
 <% end %>
 
 Once you have all of these steps complete you should be setup and ready to

@@ -1,6 +1,6 @@
 ---
 
-title: TODO - Step 4
+title: Step 4 - Developing with WSL
 tags: installation,windows
 
 ---

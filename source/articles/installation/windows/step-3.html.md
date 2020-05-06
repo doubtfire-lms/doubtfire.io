@@ -1,6 +1,6 @@
 ---
 
-title: TODO - Step 3
+title: Step 3 - Setup the Doubtfire Frontend
 tags: installation,windows
 
 ---
