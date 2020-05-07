@@ -5,7 +5,7 @@ tags: installation, mac
 date: 2020-01-19 20:00 AEST
 
 
-author: Sai Chaitanya Ravuri
+author: Jake Renzella
 
 summary: This document provides manual installation steps with commands for Doubtfire.io on Mac OS 
 
@@ -17,7 +17,6 @@ summary: This document provides manual installation steps with commands for Doub
 
 Start by ensuring you have ruby on your system. You must install [rbenv](https://github.com/rbenv/rbenv) to keep your ruby versions under control. Refer to rbenv's [installation guide](https://github.com/rbenv/rbenv#installation) on how to do so.
 
-For Mac users ruby comes pre-installed on their system
 
 Ensure you have installed ruby version 2.4.3 if not use the command:
 
@@ -33,11 +32,6 @@ Then, install [bundler](https://bundler.io/) to sort out your ruby dependencies:
 $ gem install bundler
 $ bundle install
 ```
-Install middleman by using the command 
-
-```
-$ sudo gem install middleman
- ```
 
 To start the middleman server use command 'bundle exec middleman serve' 
 
