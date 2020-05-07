@@ -4,7 +4,7 @@ title: Ubuntu Manual Installation
 date: 2020-04-21 15:11 UTC
 tags: installation,ubuntu
 
-author: Jeevan loyd Fernandes
+author: Jake Renzella
 summary: See the steps involved in installing doubtfire-api, doubtfire-web and doubtfire-Io for Ubuntu Os.
 
 
