@@ -72,10 +72,10 @@ _or_, if you're using [Oh-My-Zsh](http://ohmyz.sh), add to your `.zshrc`:
 $ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 ```
 
-Now install Ruby v2.4.3:
+Now install Ruby v2.3.8:
  
 ```
-$ rbenv install 2.4.3
+$ rbenv install 2.3.8
 ```
 ---
 
@@ -142,7 +142,7 @@ Set up [overcommit](https://github.com/brigade/overcommit) and install hooks:
 
  ```
 
-$ gem install overcommit -v 0.47.0
+$ sudo gem install overcommit -v 0.47.0
 
 $ rbenv rehash
 
@@ -154,7 +154,7 @@ Then install Doubtfire API dependencies using [bundler](http://bundler.io):
 
 ``` 
 
-$ gem install bundler -v 1.17.3
+$ sudo gem install bundler -v 1.17.3
 
 $ bundle install --without production replica staging
 

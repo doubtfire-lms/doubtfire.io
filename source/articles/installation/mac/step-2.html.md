@@ -26,12 +26,6 @@ Install [Node.js](https://nodejs.org/en/) either by [downloading it](https://nod
 ```
   $ brew install node
 ```
-or by using apt-get on Linux:
-
-```
-$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
-```
 
 Install overcommit and Ruby [SASS](https://sass-lang.com/):
 

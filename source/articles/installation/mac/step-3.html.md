@@ -22,24 +22,14 @@ $ git clone https://github.com/doubtfire-lms/doubtfire.io.git
 
 $ cd ./doubtfire.io
 ```
-Start by ensuring you have ruby on your system but Mac OS users will have a pre-installed ruby on the system. You must install [rbenv](https://github.com/rbenv/rbenv) to keep your ruby versions under control. Refer to rbenv's [installation guide](https://github.com/rbenv/rbenv#installation) on how to do so.
 
-
-Ensure you have installed ruby version 2.4.3 if not use the command:
+MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middleman's dependencies need to be compiled during installation and on MacOS that requires Xcode Command Line Tools. Xcode can be installed from the terminal:
 
 ```
-$ rbenv install 2.4.3
-$ rbenv rehash
+$ xcode-select --install
 ```
-The command 'rbenv rehash' is used to install shims for all Ruby executables known to rbenv 
 
-Then, install [bundler](https://bundler.io/) to sort out your ruby dependencies:
-
-```
-$ gem install bundler
-$ bundle install
-```
-To install middleman on the system use the command 
+Once you have Ruby and RubyGems up and running, execute the following from the command line to install middleman: 
 
 ```
 $ sudo gem install middleman
