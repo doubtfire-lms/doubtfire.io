@@ -28,10 +28,10 @@ MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middle
 ```
 $ xcode-select --install
 ```
-For switching the Ruby version use following command:
+For switching the Ruby version to 2.3.8 use following command:
 
 ```
-rbenv local 2.4.3
+ $ rbenv local 2.4.3
 ```
 
 Once you have Ruby and RubyGems up and running, execute the following from the command line to install middleman: 

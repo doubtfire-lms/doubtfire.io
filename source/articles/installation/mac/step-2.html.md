@@ -26,10 +26,10 @@ Install [Node.js](https://nodejs.org/en/) either by [downloading it](https://nod
 ```
   $ brew install node
 ```
-For swtiching the Ruby version use the following command:
+For swtiching the Ruby version to 2.3.8 use the following command:
 
 ```
-rbenv local 2.3.8
+ $ rbenv local 2.3.8
 ```
 
 
