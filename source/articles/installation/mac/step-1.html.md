@@ -41,12 +41,11 @@ summary: This document contains the necessary steps required to install Doubtfir
 Install [Homebrew](http://brew.sh) for easy package management, if you haven't already, as well as [Homebrew Cask](http://caskroom.io):
 
  
-```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 $ brew tap caskroom/cask
 
-```
+
 ---
 
 
@@ -56,36 +55,44 @@ $ brew tap caskroom/cask
 Install [rbenv](https://github.com/sstephenson/rbenv) and ruby-build:
 
  
-```
 $ brew install ruby ruby-build rbenv
-```
 
 Add the following to your `.bashrc`:
 
-```
+
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-```
+
  
 _or_, if you're using [Oh-My-Zsh](http://ohmyz.sh), add to your `.zshrc`:
 
-```
+
 $ echo 'eval "$(rbenv init -)"' >> ~/.zshrc
+
+
+Now install Ruby v2.4.3:
+ 
+
+$ rbenv install 2.4.3
+---
+
+Clone project and change your working directory to the api:
+
+ ```
+
+$ git clone https://github.com/doubtfire-lms/doubtfire-api.git
+
+$ cd ./doubtfire-api
 ```
 
-Now install Ruby v2.3.8:
- 
-```
-$ rbenv install 2.3.8
-```
----
+Set up [overcommit](https://github.com/brigade/overcommit) and install hooks:
 
 <a id="Install_Postgres"></a>
 ## 3. Install Postgres
 Install the [Postgres App](http://postgresapp.com):
 
-```
+ ```
 $ brew cask install postgres --appdir=/Applications
-```
+
  
 Ensure `pg_config` is on the `PATH`, and then login to Postgres:
 
@@ -128,21 +135,9 @@ If you are a developer for the project, it is usually better to [create a fork](
 
 <a id="Install_Doubtfire_API_dependencies"></a>
 ## 5. Install Doubtfire API dependencies
-Clone project and change your working directory to the api:
 
- ```
 
-$ git clone https://github.com/doubtfire-lms/doubtfire-api.git
-
-$ cd ./doubtfire-api
-```
- 
-
-Set up [overcommit](https://github.com/brigade/overcommit) and install hooks:
-
- ```
-
-$ sudo gem install overcommit -v 0.47.0
+$ gem install overcommit -v 0.47.0
 
 $ rbenv rehash
 
@@ -154,7 +149,7 @@ Then install Doubtfire API dependencies using [bundler](http://bundler.io):
 
 ``` 
 
-$ sudo gem install bundler -v 1.17.3
+$ gem install bundler -v 1.17.3
 
 $ bundle install --without production replica staging
 
@@ -167,26 +162,24 @@ $ rbenv rehash
 Whilst still in the Doubtfire API project root, execute:
 
  
-```
+
 $ bundle exec rake db:create
-```
+
  
 
 You can choose to populate the database with some fake test data using:
 
  
-```
 $ bundle exec rake db:populate
-```
+
 ---
 
 <a id="Install_LaTex_to_generate_PDFs"></a>
 ## 7. Install LaTex to generate PDFs
 Install Latex now
 
-```
+
 $ brew cask install mactex
-```
 
 Follow the [Generating PDFs](/doubtfire-lms/doubtfire-api/wiki/Generating-PDFs) guide to assist with installing LaTeX to generate PDFs. This step is optional unless you wish to generate PDF submissions.
 
@@ -196,8 +189,7 @@ Follow the [Generating PDFs](/doubtfire-lms/doubtfire-api/wiki/Generating-PDFs) 
 
 Once you've installed using either the install script or the manual install steps, use the following command to run the api
 
-```
-bundle exec rails s
-```
+
+bundle exec rails 
 
 ---

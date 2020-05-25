@@ -26,11 +26,17 @@ Install [Node.js](https://nodejs.org/en/) either by [downloading it](https://nod
 ```
   $ brew install node
 ```
+For swtiching the Ruby version use the following command:
+
+```
+rbenv local 2.3.8
+```
+
 
 Install overcommit and Ruby [SASS](https://sass-lang.com/):
 
 ```
-$ sudo gem install overcommit sass
+$ gem install overcommit sass
 ```
 
 If gem fails, you should read the Doubfire API README to install ruby. If you are not using rbenv, e.g., using Docker instead, you may need to prepend sudo to the above commands to have root write access.
@@ -53,8 +59,6 @@ Install all node dependencies using npm, as well as [grunt-cli](https://gruntjs.
 ```
 $ npm install
 ```
-
-Note: Here you may need to install grunt-cli globally in Linux using sudo.
 
 Lastly, to compile and run a watch server and web server, use npm start:
 

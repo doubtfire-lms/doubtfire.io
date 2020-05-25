@@ -28,11 +28,16 @@ MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middle
 ```
 $ xcode-select --install
 ```
+For switching the Ruby version use following command:
+
+```
+rbenv local 2.4.3
+```
 
 Once you have Ruby and RubyGems up and running, execute the following from the command line to install middleman: 
 
 ```
-$ sudo gem install middleman
+$ gem install middleman
 ```
 To start the middleman server use command 'bundle exec middleman serve' 
 
