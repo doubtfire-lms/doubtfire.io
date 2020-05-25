@@ -77,11 +77,7 @@ Now install Ruby v2.3.8:
 ```
 $ rbenv install 2.3.8
 ```
-For switching the Ruby version to 2.3.8 use the following command:
 
-```
-$ rbenv local 2.3.8 
----
 Clone project and change your working directory to the api:
 
  ```
@@ -90,7 +86,12 @@ $ git clone https://github.com/doubtfire-lms/doubtfire-api.git
 
 $ cd ./doubtfire-api
 ```
+For switching the Ruby version to 2.3.8 use the following command:
 
+```
+$ rbenv local 2.3.8
+```
+---
 <a id="Install_Postgres"></a>
 ## 3. Install Postgres
 Install the [Postgres App](http://postgresapp.com):

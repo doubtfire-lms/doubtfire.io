@@ -28,7 +28,7 @@ MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middle
 ```
 $ xcode-select --install
 ```
-For switching the Ruby version to 2.3.8 use following command:
+For switching the Ruby version to 2.4.3 use following command:
 
 ```
  $ rbenv local 2.4.3
