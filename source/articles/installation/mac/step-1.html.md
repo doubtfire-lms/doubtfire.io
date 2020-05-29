@@ -146,7 +146,7 @@ Set up [overcommit](https://github.com/brigade/overcommit) and install hooks:
 
  ```
 
-$ sudo gem install overcommit -v 0.47.0
+$ gem install overcommit -v 0.47.0
 
 $ rbenv rehash
 
@@ -158,7 +158,7 @@ Then install Doubtfire API dependencies using [bundler](http://bundler.io):
 
 ``` 
 
-$ sudo gem install bundler -v 1.17.3
+$ gem install bundler -v 1.17.3
 
 $ bundle install --without production replica staging
 

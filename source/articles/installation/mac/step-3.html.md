@@ -22,12 +22,18 @@ $ git clone https://github.com/doubtfire-lms/doubtfire.io.git
 
 $ cd ./doubtfire.io
 ```
+Ensure you have installed ruby version 2.4.3:
 
+```
+$ rbenv install 2.4.3
+$ rbenv rehash
+```
 MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middleman's dependencies need to be compiled during installation and on MacOS that requires Xcode Command Line Tools. Xcode can be installed from the terminal:
 
 ```
 $ xcode-select --install
 ```
+
 For switching the Ruby version to 2.4.3 use following command:
 
 ```
