@@ -2,12 +2,13 @@
   # Get the current step from the URL. Now find the next and previous
   # pages from the siblings of this current page.
   this_step = current_page.url.match(/step-(\d)+/)[1].to_i
+  total_step = current_page.siblings.select { |p| p.url.match(/step-(\d)+/) }.length + 1
   prev_page = current_page.siblings.find { |p| p.url.end_with?("step-#{this_step - 1}/") }
   next_page = current_page.siblings.find { |p| p.url.end_with?("step-#{this_step + 1}/") }
 %>
 <% wrap_layout :'articles/index' do %>
   <p class="lead">
-    Step <%= this_step %> of <%= current_page.siblings.length + 1 %>
+    Step <%= this_step %> of <%= total_step %>
   </p>
   <hr>
   <article class="mp-article">
