@@ -30,22 +30,58 @@
     <main id="content">
         <div class="container">
     <div class="row">
-        <h1>TODO - Step 2</h1>
+        <h1>Manual Installation of Doubtfire-web on Mac Os</h1>
         <p class="lead">
-    Step 2 of 4
+    Step 2 of 3
   </p>
   <hr>
   <article class="mp-article">
-    <p>TODO: Write something for step 2.</p>
+    <h2>Getting Started</h2>
+
+<p>Continue below steps to manually install <code>doubtfire-web</code> on Mac OS.
+For installing Doubtfire-web dependencies we have to clone project and change working directory to web</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ git clone https://github.com/doubtfire-lms/doubtfire-web.git
+
+$ cd ./doubtfire-web
+</code></pre></div>
+<p>Install <a href="https://nodejs.org/en/">Node.js</a> either by <a href="https://nodejs.org/download/">downloading it</a> and installing it manually, or via <a href="https://brew.sh/">Homebrew</a> on OS X:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>  $ brew install node
+</code></pre></div>
+<p>For swtiching the Ruby version to 2.3.8 use the following command:</p>
+<div class="highlight"><pre class="highlight plaintext"><code> $ rbenv local 2.3.8
+</code></pre></div>
+<p>Install overcommit and Ruby <a href="https://sass-lang.com/">SASS</a>:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ gem install overcommit sass
+</code></pre></div>
+<p>If gem fails, you should read the Doubfire API README to install ruby. If you are not using rbenv, e.g., using Docker instead, you may need to prepend sudo to the above commands to have root write access.</p>
+
+<p>If using rbenv, rehash to ensure each of the gems are on your PATH:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ rbenv rehash
+</code></pre></div>
+<p>Install and sign the git hooks using overcommit:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ overcommit --install
+$ overcommit --sign
+</code></pre></div>
+<p>Install all node dependencies using npm, as well as <a href="https://gruntjs.com/using-the-cli">grunt-cli</a> globally:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ npm install
+</code></pre></div>
+<p>Lastly, to compile and run a watch server and web server, use npm start:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ npm start
+</code></pre></div>
+<p>This will automatically run the angular 1 grunt watch, and the angular 9 ng serve.</p>
+
+<p>You can then navigate to the Doubtfire web interface at <a href="http://localhost:8000/">http://localhost:8000</a> on your web browser.</p>
+
+<hr>
 
   </article>
   <hr>
   <nav>
 <a href="/doubtfire.io/articles/installation/mac/step-1/" class="btn btn-sm btn-primary">        <i class="fa fa-chevron-left"></i>
         <strong>Previous Step:</strong>
-        TODO - Step 1
+        Manuall Installation of Doubtfire-api on Mac Os
 </a><a href="/doubtfire.io/articles/installation/mac/step-3/" class="btn btn-sm btn-primary pull-right">        <strong>Next Step:</strong>
-        TODO - Step 3
+        Manual Installation of Doubtfire.io on Mac Os
         <i class="fa fa-chevron-right"></i>
 </a>  </nav>
 

@@ -30,22 +30,50 @@
     <main id="content">
         <div class="container">
     <div class="row">
-        <h1>TODO - Step 2</h1>
+        <h1>Step 2 - Setup the Doubtfire Backend</h1>
         <p class="lead">
     Step 2 of 4
   </p>
   <hr>
   <article class="mp-article">
-    <p>TODO: Write something for step 2.</p>
+    <p>Now that your Ubuntu distribution is configured, it&rsquo;s time to install the Doubtfire backend.</p>
+
+<ol>
+<li><p><strong>First, create the Doubtfire directory and enter the directory.</strong> This step is optional, but it is useful keep the codebase in its own directory.</p>
+
+<p><img alt="Create Doubtfire directory" src="/images/articles/installation/windows/doubtfire_directory.png" style="width: 500px; display:block; margin: 0 auto;"></img></p></li>
+<li><p><strong>Clone the Doubtfire repositories</strong> by cloning from the Doubtfire GitHub repository links below using <code>git clone &lt;repo_link&gt;</code>. </p>
+
+<p>NOTE: It is recommended that you first fork the repositories onto your own Github account, and clone from there. Please refer to the <a href="https://github.com/OnTrack-UG-Squad-T1-2020/doubtfire-api/blob/development/CONTRIBUTING.md#1-forking-and-cloning-the-repository">guide on contributing</a> for detailed instructions.</p>
+
+<ul>
+<li><strong>doubtfire-api:</strong> <a href="https://github.com/doubtfire-lms/doubtfire-api.git">https://github.com/doubtfire-lms/doubtfire-api.git</a></li>
+<li><strong>doubtfire-web:</strong> <a href="https://github.com/doubtfire-lms/doubtfire-web.git">https://github.com/doubtfire-lms/doubtfire-web.git</a></li>
+<li><strong>doubtfire.io:</strong> <a href="https://github.com/doubtfire-lms/doubtfire.io.git">https://github.com/doubtfire-lms/doubtfire.io.git</a></li>
+</ul>
+
+<p><img alt="Clone Doubtfire repositories" src="/images/articles/installation/windows/doubtfire_clone.png" style="width: 500px; display:block; margin: 0 auto;"></img></p></li>
+<li><p><strong>Enter the doubtfire-api directory, and run the setup script to install the doubtfire-api</strong> by typing <code>./setup.sh</code>. You may be asked at times to interact with the console (such as entering your password, pressing enter etc.) so keep an eye on it.
+This may take a while.</p>
+
+<p><img alt="Setup doubtfire-api" src="/images/articles/installation/windows/api_setup.png" style="width: 500px; display:block; margin: 0 auto;"></img></p></li>
+<li><p><strong>Ensure that doubtfire-api is installed correctly</strong> by starting the backend server with <code>bundle exec rails s</code>.</p>
+
+<p><img alt="Start doubtfire-api" src="/images/articles/installation/windows/api_test.png" style="width: 500px; display:block; margin: 0 auto;"></img></p>
+
+<p>Confirm that the backend is running by navigating to <code>http://localhost:3000/api/docs/</code> in your web browser. You should see the Swagger UI and a list of all the API endpoints.</p></li>
+</ol>
+
+<p>Leave the server running and open a new Ubuntu terminal by opening the Ubuntu app from the start menu again. Continue to step 3 to install the Doubtfire frontend.</p>
 
   </article>
   <hr>
   <nav>
 <a href="/doubtfire.io/articles/installation/windows/step-1/" class="btn btn-sm btn-primary">        <i class="fa fa-chevron-left"></i>
         <strong>Previous Step:</strong>
-        TODO - Step 1
+        Step 1 - Setup WSL and Ubuntu
 </a><a href="/doubtfire.io/articles/installation/windows/step-3/" class="btn btn-sm btn-primary pull-right">        <strong>Next Step:</strong>
-        TODO - Step 3
+        Step 3 - Setup the Doubtfire Frontend
         <i class="fa fa-chevron-right"></i>
 </a>  </nav>
 

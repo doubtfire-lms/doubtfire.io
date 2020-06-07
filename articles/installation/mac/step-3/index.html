@@ -30,23 +30,45 @@
     <main id="content">
         <div class="container">
     <div class="row">
-        <h1>TODO - Step 3</h1>
+        <h1>Manual Installation of Doubtfire.io on Mac Os</h1>
         <p class="lead">
-    Step 3 of 4
+    Step 3 of 3
   </p>
   <hr>
   <article class="mp-article">
-    <p>TODO: Write something for step 3.</p>
+    <h2>Getting Started</h2>
+
+<p>For Installing the Doubtfire.io dependencies clone project and change the working directory to io
+by follwings steps </p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ git clone https://github.com/doubtfire-lms/doubtfire.io.git
+
+$ cd ./doubtfire.io
+</code></pre></div>
+<p>Ensure you have installed ruby version 2.4.3:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ rbenv install 2.4.3
+$ rbenv rehash
+</code></pre></div>
+<p>MacOS comes prepackaged with both Ruby and RubyGems, however, some of the Middleman&rsquo;s dependencies need to be compiled during installation and on MacOS that requires Xcode Command Line Tools. Xcode can be installed from the terminal:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ xcode-select --install
+</code></pre></div>
+<p>For switching the Ruby version to 2.4.3 use following command:</p>
+<div class="highlight"><pre class="highlight plaintext"><code> $ rbenv local 2.4.3
+</code></pre></div>
+<p>Once you have Ruby and RubyGems up and running, execute the following from the command line to install middleman: </p>
+<div class="highlight"><pre class="highlight plaintext"><code>$ gem install middleman
+</code></pre></div>
+<p>To start the middleman server use command &lsquo;bundle exec middleman serve&rsquo; </p>
+
+<p>You can then navigate to the Doubtfire io interface at <a href="http://10.0.2.15:4567/">http://10.0.2.15:4567</a> on your web browser.</p>
+
+<hr>
 
   </article>
   <hr>
   <nav>
 <a href="/doubtfire.io/articles/installation/mac/step-2/" class="btn btn-sm btn-primary">        <i class="fa fa-chevron-left"></i>
         <strong>Previous Step:</strong>
-        TODO - Step 2
-</a><a href="/doubtfire.io/articles/installation/mac/step-4/" class="btn btn-sm btn-primary pull-right">        <strong>Next Step:</strong>
-        TODO - Step 4
-        <i class="fa fa-chevron-right"></i>
+        Manual Installation of Doubtfire-web on Mac Os
 </a>  </nav>
 
     </div>

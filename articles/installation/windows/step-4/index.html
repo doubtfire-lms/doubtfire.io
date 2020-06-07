@@ -30,20 +30,35 @@
     <main id="content">
         <div class="container">
     <div class="row">
-        <h1>TODO - Step 4</h1>
+        <h1>Step 4 - Developing with WSL</h1>
         <p class="lead">
     Step 4 of 4
   </p>
   <hr>
   <article class="mp-article">
-    <p>TODO: Write something for step 4.</p>
+    <p>To avoid any errors between the Windows filesystem and Linux filesystem when editing, Microsoft has implemented features into Windows and Visual Studio Code itself to prevent corruption of the Linux subsystem, therefore VS Code must be the editor you use. <strong>Ensure you have the latest version of Windows 10 and Visual Studio Code before proceeding.</strong></p>
+
+<ol>
+<li><p><strong>Install VS Code Server on Ubuntu.</strong> This is as simple as running the command <code>code</code> inside of the terminal.</p>
+
+<p><img alt="Install Server" src="/images/articles/installation/windows/doubtfire_four.PNG" style="width: 600px; display:block; margin: 0 auto;"></img></p></li>
+<li><p><strong>Open VS Code in the Doubtfire directory and configure.</strong> Running <code>code .</code> will open VS Code in the directory you are currently in.</p>
+
+<p><img alt="Open VS Code" src="/images/articles/installation/windows/doubtfire_five.PNG" style="width: 600px; display:block; margin: 0 auto;"></img></p>
+
+<p>This will open a new VS Code window in the Doubtfire directory. If prompted to install &ldquo;WSL – Remote&rdquo; click the install button (this may require a reload).</p>
+
+<p><img alt="VS Code" src="/images/articles/installation/windows/doubtfire_six.PNG" style="width: 600px; display:block; margin: 0 auto;"></img></p>
+
+<p>You should now see the Doubtfire codebase! The bottom left hand corner should indicate that you are connected to WSL:<img alt="WSL" src="/images/articles/installation/windows/doubtfire_seven.PNG" style="width: 200px; display:block; margin: 0 auto;"></img> </p></li>
+</ol>
 
   </article>
   <hr>
   <nav>
 <a href="/doubtfire.io/articles/installation/windows/step-3/" class="btn btn-sm btn-primary">        <i class="fa fa-chevron-left"></i>
         <strong>Previous Step:</strong>
-        TODO - Step 3
+        Step 3 - Setup the Doubtfire Frontend
 </a>  </nav>
 
     </div>
