@@ -125,7 +125,7 @@ GEM
       activesupport (>= 3.1)
     parallel (1.12.1)
     public_suffix (3.0.2)
-    rack (2.0.8)
+    rack (2.2.3)
     rack-livereload (0.3.17)
       rack
     rails-assets-tether (1.1.1)
