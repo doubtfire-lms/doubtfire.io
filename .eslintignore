@@ -1,0 +1,12 @@
+node_modules
+
+# ESLint configuration.
+# Prevents "The file must be included in at least one of the projects provided".
+# https://github.com/typescript-eslint/typescript-eslint/blob/master/docs/getting-started/linting/TYPED_LINTING.md
+.eslintrc.js
+
+# Prettier configuration.
+.prettierrc.js
+
+# Next.js static site output.
+out
