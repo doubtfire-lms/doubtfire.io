@@ -4,19 +4,9 @@ summary: Guides the user through an installation on Ubuntu WSL distribution
 authors: C-Blenco, MattK18
 ---
 
-<!-- TODO: Ubuntu installation instructions -->
-
 The aim of this document is to provide instruction on how to setup a functional install of Doubtfire on Windows, via the
 Windows Subsystem for Linux (WSL). This document will also entail how to properly modify the codebase (using Visual
 Studio Code), such that no incompatibilities arise between the Windows and Linux filesystems.
-
-<!-- TODO: Before starting, visit the [requirements](./requirements) page and install all the required software. -->
-
-<!-- TODO: Visit the links below to begin: -->
-
-<!-- TODO: <% current_page.children.sort_by(&:url)[1..-1].each do |step| %> -->
-
-<!-- TODO: - **[<%= step.data.title %>](<%= step.url %>)** <% end %> -->
 
 Once you have all of these steps complete you should be setup and ready to start using Doubtfire
 
@@ -40,7 +30,7 @@ Once these are all activated/installed, proceed to [Step 1](./step-1).
    the “Windows Features” dialog, activate the “Windows Subsystem for Linux” feature, and click “OK”. You may have to
    restart Windows.
 
-   <!-- TODO: <img alt="Activate WSL" src="/images/articles/installation/windows/activate_wsl.png" style="width: 400px; display:block; margin: 0 auto;"></img> -->
+   ![Activate WSL](/guides/installation-windows/activate_wsl.png)
 
 2. **Install the WSL Ubuntu distribution if it is not yet installed.** This can be downloaded via the Windows Store
    [here](https://www.microsoft.com/store/productId/9NBLGGH4MSV6).
@@ -49,12 +39,12 @@ Once these are all activated/installed, proceed to [Step 1](./step-1).
    command line (pictured). You will be prompted to enter a Unix username & password upon first launch. Ensure your
    username consists of lowercase letters.
 
-   <!-- TODO: <img alt="Initialise Ubuntu" src="/images/articles/installation/windows/ubuntu_initial.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+   ![Initialise Ubuntu](/guides/installation-windows/ubuntu_initial.png)
 
 4. **Update Ubuntu** by executing the commands `sudo apt update` and `sudo apt dist-update` to update Ubuntu the package
    lists and upgrade packages respectively.
 
-   <!-- TODO: <img alt="Update Ubuntu" src="/images/articles/installation/windows/ubuntu_update.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+   ![Update Ubuntu](/guides/installation-windows/ubuntu_update.png)
 
 Your WSL Ubuntu environment is now setup and ready to install Doubtfire, proceed to the next step!
 
@@ -65,31 +55,31 @@ Now that your Ubuntu distribution is configured, it's time to install the Doubtf
 1.  **First, create the Doubtfire directory and enter the directory.** This step is optional, but it is useful keep the
     codebase in its own directory.
 
-    <!-- TODO: <img alt="Create Doubtfire directory" src="/images/articles/installation/windows/doubtfire_directory.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+    ![Create Doubtfire directory](/guides/installation-windows/doubtfire_directory.png)
 
 2.  **Clone the Doubtfire repositories** by cloning from the Doubtfire GitHub repository links below using
     `git clone <repo_link>`.
 
     NOTE: It is recommended that you first fork the repositories onto your own Github account, and clone from there.
     Please refer to the
-    [guide on contributing](https://github.com/OnTrack-UG-Squad-T1-2020/doubtfire-api/blob/development/CONTRIBUTING.md#1-forking-and-cloning-the-repository)
+    [guide on contributing](https://github.com/OnTrack-UG-Squad/doubtfire-api/blob/development/CONTRIBUTING.md#1-forking-and-cloning-the-repository)
     for detailed instructions.
 
     - **doubtfire-api:** <https://github.com/doubtfire-lms/doubtfire-api.git>
     - **doubtfire-web:** <https://github.com/doubtfire-lms/doubtfire-web.git>
     - **doubtfire.io:** <https://github.com/doubtfire-lms/doubtfire.io.git>
 
-    <!-- TODO: <img alt="Clone Doubtfire repositories" src="/images/articles/installation/windows/doubtfire_clone.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+    ![Clone Doubtfire repositories](/guides/installation-windows/doubtfire_clone.png)
 
 3.  **Enter the doubtfire-api directory, and run the setup script to install the doubtfire-api** by typing `./setup.sh`.
     You may be asked at times to interact with the console (such as entering your password, pressing enter etc.) so keep
     an eye on it. This may take a while.
 
-        <!-- TODO: <img alt="Setup doubtfire-api" src="/images/articles/installation/windows/api_setup.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+    ![Setup doubtfire-api](/guides/installation-windows/api_setup.png)
 
 4.  **Ensure that doubtfire-api is installed correctly** by starting the backend server with `bundle exec rails s`.
 
-    <!-- TODO: <img alt="Start doubtfire-api" src="/images/articles/installation/windows/api_test.png" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+    ![Start doubtfire-api](/guides/installation-windows/api_test.png)
 
     Confirm that the backend is running by navigating to `http://localhost:3000/api/docs/` in your web browser. You
     should see the Swagger UI and a list of all the API endpoints.
@@ -102,16 +92,16 @@ step 3 to install the Doubtfire frontend.
 1. **In the new terminal, run the doubtfire-web setup** by changing directory to `~/Doubtfire/doubtfire-web` and
    executing the setup script.
 
-   <!-- TODO: <img alt="Doubtfire set up" src="/images/articles/installation/windows/Doubtfire_one.PNG" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+   ![Doubtfire set up](/guides/installation-windows/Doubtfire_one.PNG)
 
 2. **Start the frontend** by executing npm start.
 
-   <!-- TODO: <img alt="Start frontend" src="/images/articles/installation/windows/doubtfire_two.PNG" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+   ![Start frontend](/guides/installation-windows/doubtfire_two.PNG)
 
 3. **Verify the frontend is running** by navigating to `http://localhost:4200/`. You should see the Doubtfire login
    interface (as long as the backend is also running).
 
-   <!-- TODO: <img alt="Setup doubtfire-api" src="/images/articles/installation/windows/doubtfire_three.PNG" style="width: 500px; display:block; margin: 0 auto;"></img> -->
+   ![Setup doubtfire-api](/guides/installation-windows/doubtfire_three.PNG)
 
    To stop the server, open the terminal window and press `Ctrl + C`
 
@@ -125,17 +115,17 @@ editor you use. **Ensure you have the latest version of Windows 10 and Visual St
 
 1. **Install VS Code Server on Ubuntu.** This is as simple as running the command `code` inside of the terminal.
 
-   <!-- TODO: <img alt="Install Server" src="/images/articles/installation/windows/doubtfire_four.PNG" style="width: 600px; display:block; margin: 0 auto;"></img> -->
+   ![Install Server](/guides/installation-windows/doubtfire_four.PNG)
 
 2. **Open VS Code in the Doubtfire directory and configure.** Running `code .` will open VS Code in the directory you
    are currently in.
 
-   <!-- TODO: <img alt="Open VS Code" src="/images/articles/installation/windows/doubtfire_five.PNG" style="width: 600px; display:block; margin: 0 auto;"></img> -->
+   ![Open VS Code](/guides/installation-windows/doubtfire_five.PNG)
 
    This will open a new VS Code window in the Doubtfire directory. If prompted to install "WSL – Remote" click the
    install button (this may require a reload).
 
-   <!-- TODO: <img alt="VS Code" src="/images/articles/installation/windows/doubtfire_six.PNG" style="width: 600px; display:block; margin: 0 auto;"></img> -->
+   ![VS Code](/guides/installation-windows/doubtfire_six.PNG)
 
    You should now see the Doubtfire codebase! The bottom left hand corner should indicate that you are connected to
-   <!-- WSL:TODO: <img alt="WSL" src="/images/articles/installation/windows/doubtfire_seven.PNG" style="width: 200px; display:block; margin: 0 auto;"></img> -->
+   <img src="/guides/installation-windows/doubtfire_seven.PNG" alt="WSL" class="inline">

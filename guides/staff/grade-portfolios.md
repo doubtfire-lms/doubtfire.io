@@ -21,7 +21,7 @@ These steps are elaborated upon in the following sections.
 The first step in assessing the student portfolios is to switch view, and to select the student to assess. The following
 image shows this page in action.
 
-<!-- TODO: <img alt="Selecting a student" src="/images/articles/staff/assess-portfolios/student-portfolios-select-student.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Selecting a student](/guides/grade-portfolios/select-student.png)
 
 1. Switch to the **Student Portfolios** section in the staff view to start assessing student portfolios. This page
    should contains all of the necessary details to perform the assessments.
@@ -55,7 +55,7 @@ will download a CSV containing student identification details along with the fin
 
 Once a student have been selected, you can switch to the **View Progress** tab to review their progress in the unit.
 
-<!-- TODO: <img alt="Reviewing student progress" src="/images/articles/staff/assess-portfolios/student-portfolios-view-progress.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Reviewing student progress](/guides/grade-portfolios/view-progress.png)
 
 1. Select the **View Progress** tab to show the students progress in the unit.
 
@@ -79,7 +79,7 @@ Use this page to get a quick overview of the students work, and to set your expe
 
 Now you are set to review the work in the student portfolio, select the **View Portfolio** tab.
 
-<!-- TODO: <img alt="Viewing a student portfolio" src="/images/articles/staff/assess-portfolios/student-portfolios-view-portfolio.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Viewing a student portfolio](/guides/grade-portfolios/view-portfolio.png)
 
 1. Select **View Portfolio**, and the page will download and display the portfolio for you to review.
 
@@ -112,7 +112,7 @@ indicate the achievement of each grade.
 
 The final step is then to enter the grade for the student.
 
-<!-- TODO: <img alt="Assign a grade" src="/images/articles/staff/assess-portfolios/student-portfolios-assign-grade.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Assign a grade](/guides/grade-portfolios/assign-grade.png)
 
 1. Select the **Assess Portfolio** tab
 

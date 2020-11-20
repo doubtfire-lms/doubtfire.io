@@ -6,10 +6,6 @@ authors: macite, jakerenzella
 
 To get Doubtfire installed on macOS, follow the steps below:
 
-<!-- TODO: <% current_page.children.sort_by(&:url).each_with_index do |step, i| %> -->
-
-<!-- TODO: - **[Step <%= i+1 %>](<%= step.url %>)**: <%= step.data.title %> <% end %> -->
-
 Once you have all of these steps complete you should be setup and ready to using Doubtfire.
 
 #### Step 1: Steps Involved:
@@ -32,14 +28,12 @@ Once you have all of these steps complete you should be setup and ready to using
 
 ---
 
-<!-- TODO: <a id="Install_Homebrew_and_Homebrew_Cask"></a> -->
-
 ## 1. Install Homebrew and Homebrew Cask
 
 Install [Homebrew](http://brew.sh) for easy package management, if you haven't already, as well as
 [Homebrew Cask](http://caskroom.io):
 
-```
+```shell
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 $ brew tap caskroom/cask
@@ -47,8 +41,6 @@ $ brew tap caskroom/cask
 ```
 
 ---
-
-<!-- TODO: <a id="Install_rbenv_and_ruby-build"></a> -->
 
 ## 2. Install rbenv and ruby-build
 
@@ -93,8 +85,6 @@ $ rbenv local 2.3.8
 
 ---
 
-<!-- TODO: <a id="Install_Postgres"></a> -->
-
 ## 3. Install Postgres
 
 Install the [Postgres App](http://postgresapp.com):
@@ -119,8 +109,6 @@ CREATE ROLE itig WITH CREATEDB PASSWORD 'd872$dh' LOGIN;
 
 ---
 
-<!-- TODO: <a id="Install_native_tools"></a> -->
-
 ## 4. Install native tools
 
 Install `imagemagick` at version 6, `libmagic` and `ghostscript` using Homebrew:
@@ -142,8 +130,6 @@ If you are a developer for the project, it is usually better to
 follow the steps given below
 
 ---
-
-<!-- TODO: <a id="Install_Doubtfire_API_dependencies"></a> -->
 
 ## 5. Install Doubtfire API dependencies
 
@@ -172,8 +158,6 @@ $ rbenv rehash
 
 ---
 
-<!-- TODO: <a id="Create_and_populate_Doubtfires"></a> -->
-
 ## 6. Create and populate Doubtfire
 
 Whilst still in the Doubtfire API project root, execute:
@@ -190,8 +174,6 @@ $ bundle exec rake db:populate
 
 ---
 
-<!-- TODO: <a id="Install_LaTex_to_generate_PDFs"></a> -->
-
 ## 7. Install LaTex to generate PDFs
 
 Install Latex now
@@ -204,8 +186,6 @@ Follow the [Generating PDFs](/doubtfire-lms/doubtfire-api/wiki/Generating-PDFs) 
 generate PDFs. This step is optional unless you wish to generate PDF submissions.
 
 ---
-
-<!-- TODO: <a id="Get_it_up_and_running!"></a> -->
 
 ## 8. Get it up and running!
 

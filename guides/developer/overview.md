@@ -4,30 +4,9 @@ summary: This document provides an overview of Doubtfire
 authors: Justfeedme
 ---
 
-# Doubtfire Overview
+# Introduction
 
-A getting started guide
-
----
-
-##### Menu
-
-[Introduction](#intro)  
-[Framework](#framework)  
-[Technologies used](#tech)  
-[Installing the Development Environment](#install)  
-[Code Exploration](#code)  
-[UML Class Diagrams](#uml)  
-[Contributing](#contrib)  
-[Useful References](#refs)
-
----
-
-<!-- TODO: <a id="intro"></a> -->
-
-## Introduction
-
-### What is Doubtfire
+## What is Doubtfire
 
 Doubtfire is a modern, lightweight learning management system.
 
@@ -43,7 +22,7 @@ development of self-regulation. To better support these features, we have enhanc
 visualisations to provide better support for indicating the links among these tasks and the unit’s learning outcomes as
 well as expected outcomes.
 
-### What does it do
+## What does it do
 
 Doubtfire allows staff and student to explore the links between tasks and learning outcomes, enabling staff to monitor
 student progress toward achievement of learning outcomes, and supporting students in better manage their learning
@@ -63,7 +42,7 @@ A link to using some of the basic features for **staff** can be found
 A link to using some of the basic features for **students** can be found
 [here](https://doubtfire-lms.github.io/doubtfire.io/articles/guides/tags/student_guides/).
 
-### Learning and Assessment
+## Learning and Assessment
 
 The learning outcomes guide all other activities, and are therefore defined at the start of the unit design. The aim of
 this process is to define what all students need to demonstrate in order to pass the unit, so these outcomes need to be
@@ -86,7 +65,7 @@ the unit’s assessment criteria and unit learning outcomes to determine results
 status of each student’s tasks, with the assessor knowing that those that are marked as complete and have been assessed
 by staff as demonstrating the required knowledge.
 
-### Burndown charts - An Agile approach
+## Burndown charts - An Agile approach
 
 A key principle of Agile software development methods is that they embrace change by allowing for adaptive, peri- odic
 adjustment of activities, resulting in robust and effective outcomes.
@@ -105,26 +84,24 @@ completed, it was also seen that students could use the system to indicate if th
 with, particular tasks. To account for task heterogeneity, staff need to be able to weight tasks, based on predicted
 size and complexity. A students projected completion should be recalculated as tasks and weeks progress.
 
-### Who developed it
+## Who developed it
 
 The main contributors of Doubtfire are Andrew Cain (@macite), Alex Cummaudo (@alexcu) and Jake Renzella (@jakerenzella)
 
 ---
 
-<!-- TODO: <a id="framework"></a> -->
+# Framework - High Level Structure
 
-## Framework - High Level Structure
-
-### Doubtfire Web
+## Doubtfire Web
 
 Doubtfire Web is the front end - client side - and is written in Javascript, using [Angular](http://angularjs.org)
 application built using [Bootstrap](http://getbootstrap.com).
 
-### Doubtfire API
+## Doubtfire API
 
 Doubtfire API is the backend - server side - and uses the Ruby on Rails framework.
 
-<!-- TODO: ![Imgur](https://imgur.com/4ZTVYAi.gif) _High Level Structure of Doubtfire_ -->
+![High Level Structure of Doubtfire](/guides/overview/high-level-structure.gif)
 
 Grape API is a Restful API. Access to the API via http verbs:
 
@@ -137,89 +114,87 @@ Firstly we need to start the Rails server by navigating to the doubtfire-api fol
 
     bundle exec rails s
 
-<!-- TODO: ![Imgur](https://imgur.com/Ousq0PH.png) _Starting the Rails server_ -->
+![Starting the Rails server](/guides/overview/start-rails-server.png)
 
 Once you have Rail server running, navigate to 0.0.0.0:3000/api/docs/, it gives us access to the API endpoints.
 
-<!-- TODO: ![Imgur](https://imgur.com/xeGu9TU.png) _Doubtfire API Documentation_ -->
+![Doubtfire API documentation](/guides/overview/api-documentation.png)
 
 For example, clicking on "users" shows endpoints such as Get, Post, etc, which represent the same in the code
 users_api.rb
 
-<!-- TODO: ![Imgur](https://imgur.com/QLHn0Dj.png) -->
+![Users API](/guides/overview/users-api.jpg)
 
 The endpoints above (Get, Post, etc) are found in the code in users_api.rb, as below.
 
-<!-- TODO: ![Imgur](https://imgur.com/2dPNtAF.png) _users_api.rb file_ -->
+![users_api.rb file](/guides/overview/users-api-ruby.jpg)
 
 You can then fully interact with the API.
 
-#### Getting the list of users in the database
+### Getting the list of users in the database
 
 First off, let's log in, and view the existing list of users in the database.
 
 If we click on "Users" in the API documentation, it looks like this:
 
-<!-- TODO: ![Imgur](https://imgur.com/nOWEhGJ.png) _Users_ -->
+![Users](/guides/overview/users-api.jpg)
 
 We then want to click on "GET" (Get the list of users), which looks like this:
 
-<!-- TODO: ![Imgur](https://i.imgur.com/6Koxh3U.png) _Get the list of users_ -->
+![Get the list of users](/guides/overview/get-users-endpoint.png)
 
 However, we need an authentication code to do this or any action, i.e. we need to be logged in as a user. To do this,
 click on "auth":
 
-<!-- TODO: ![Imgur](https://imgur.com/GRUzdp5.png) _Auth_ -->
+![Auth API](/guides/overview/auth-api.png)
 
 Then click on "POST" to sign in, using:
 
     username: aadmin
     password: password
 
-<!-- TODO: ![Imgur](https://imgur.com/UDlXoaQ.png) _Signing in_ -->
+![Signing in](/guides/overview/auth-endpoint.jpg)
 
 Click on "Try it out", then scroll down and copy the **auth_token**:
 
-<!-- TODO: ![Imgur](https://imgur.com/ZNtjzlp.png) _Auth token_ -->
+![Auth token](/guides/overview/auth-token.jpg)
 
 We can then go back to "Users", and use this "auth_token" to get the list of users.
 
-<!-- TODO: ![Imgur](https://imgur.com/JnX88im.png) _Using auth_token to access API endpoints as a logged in user_ -->
+![Using auth_token to access API endpoints as a logged in user](/guides/overview/authenticated-api-request.jpg)
 
 Now, if we "Try it out", this time we will get the list of users from the database. Make sure to scroll down to see the
 full list.
 
-<!-- TODO: ![Imgur](https://imgur.com/oC4V64d.png) _"Getting" the list of users from the database_ -->
+!["Getting" the list of users from the database](/guides/overview/get-users-response.jpg)
 
-#### Creating a user
+### Creating a user
 
 Next, lets say we want to create a new user into the database.
 
 We should go to Users in the API, select "POST create new user", and populate the values for the new user. Also we
 should add the same auth_token we used when signing in, as below:
 
-<!-- TODO: ![Imgur](https://imgur.com/glBwPBC.png) _Creating a new user_ -->
+![Creating a new user](/guides/overview/post-users-endpoint.jpg)
 
 After clicking "Try it out", the Response Body should show the database update as below:
 
-<!-- TODO: ![Imgur](https://imgur.com/m8LsPIk.png) _New user added_ -->
+![New user added](/guides/overview/post-users-response.png)
 
 Finally to see the newly created user in the list of users, we can go back to "Users" in the API and use the function
 "GET - Get the list of users" again.
 
 This time, if we scroll down to the body, we should see our newly created user.
 
-<!-- TODO: ![Imgur](https://imgur.com/31H3e0F.png) _Newly created user found at the bottom of the List of Users_ -->
+![Newly created user found at the bottom of the List of Users](/guides/overview/post-users-response-result.jpg)
 
 Similarly, we can interact with different sections of the API, and get feedback from the database.
 
 ---
 
-<!-- TODO: <a id="tech"></a> -->
+# Technologies Used
 
-## Technologies Used
-
-### Javascript - Angular Framework (front end)
+## Javascript - Angular Framework (front end)
 
 Angular JS is a JavaScript based Open source front end web framework, maintained by Google and by a group of individuals
 and corporations to address many of the challenges faced in developing a single page application with components
@@ -230,14 +205,14 @@ developing by providing a framework for client side with MVC ( Model View Contro
 Angular JS is a part of MEAN (Used to build dynamic web pages and applications) which contains MongoDB Data base,
 Express Java script web application server framework, Angular JS and Node JS server runtime environment.
 
-#### What does angular JS DO?
+### What does angular JS DO?
 
 The AngularJS framework works by first reading the Hypertext Markup Language (HTML) page, which has an additional custom
 HTML attributes embedded into it. Angular interprets those attributes as directives to bind input or output parts of the
 page to a model that is represented by standard JavaScript variables. The values of those JavaScript variables can be
 manually set within the code, or retrieved from static or dynamic JSON resources.
 
-#### Aim of Angular JS’s design
+### Aim of Angular JS’s design
 
 - to decouple DOM manipulation from application logic. The difficulty of this is dramatically affected by the way the
   code is structured.
@@ -248,7 +223,7 @@ manually set within the code, or retrieved from static or dynamic JSON resources
 - to provide structure for the journey of building an application: from designing the UI, through writing the business
   logic, to testing.
 
-### NodeJS (front end - server)
+## NodeJS (front end - server)
 
 Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a
 browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running
@@ -259,7 +234,7 @@ handle various core functionalities. Modules are provided for file system I/O, n
 UDP), binary data (buffers), cryptography functions, data streams, and other core functions. Node.js's modules use an
 API designed to reduce the complexity of writing server applications.
 
-### Ruby On Rails (back end)
+## Ruby On Rails (back end)
 
 Rails is a development tool which gives web developers a framework, providing structure for all the code they write. The
 Rails framework helps developers to build websites and applications, because it abstracts and simplifies common
@@ -271,7 +246,7 @@ application design.** REST (Representational State Transfer) is a style of softw
 client-server relationship. It encourages a logical structure within applications, which means they can easily be
 exposed as an API (Application Programming Interface).
 
-#### Why are we using Ruby On Rails?
+### Why are we using Ruby On Rails?
 
 1. The process of programming is much faster than with other frameworks and languages, partly because of the
    object-oriented nature of Ruby and the vast collection of open source code available within the Rails community.
@@ -289,33 +264,33 @@ exposed as an API (Application Programming Interface).
 6. Rails and most of its libraries are open source, so unlike other commercial development frameworks there are no
    licensing costs involved.
 
-### GitHub
+## GitHub
 
 Github is a Git repository hosting service, but it adds many of its own features. While Git is a command line tool,
 GitHub provides a Web-based graphical interface. It also provides access control and several collaboration features,
 such as a wikis and basic task management tools for every project.
 
-#### How it works?
+### How it works?
 
 GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on
 projects from anywhere. You'll create your own repository and learn GitHub's Pull Request workflow, a popular way to
 create and review code
 
-#### What is a pull request?
+### What is a pull request?
 
 A pull request (PR) is a method of submitting contributions to an open development project. It occurs when a developer
 asks for changes committed to an external repository to be considered for inclusion in a project's main repository after
 the peer review.
 
-#### Why to use Github?
+### Why to use Github?
 
 It includes access controls as well as a number of collaboration features like tools for basic task management and for
 all projects you handle. GitHub hosts your source code projects in a variety of different programming languages and
 keeps track of the various changes made to every iteration.
 
-### Restful API
+## Restful API
 
-### MVC model (Model-View-Controller)
+## MVC model (Model-View-Controller)
 
 It’s a Software design pattern Commonly used for developing user Interfaces which divides the related program logic into
 three interconnected elements, This is done to separate internal representations of information from the ways
@@ -323,9 +298,9 @@ information is presented to and accepted from the user. This patten us used for 
 Popular programing languages like Java, Python, Ruby, PHP etc have MVC frameworks used for web and mobile application
 development.
 
-<!-- TODO: ![Imgur](https://imgur.com/3el2erJ.png) _The MVC Model_ -->
+![The MVC Model](/guides/overview/mvc.png)
 
-#### Why use MVC model
+### Why use MVC model
 
 1. Multiple developers can work simultaneously on the model, controller and views.
 
@@ -338,11 +313,11 @@ development.
 
 5. Models can have multiple views
 
-### Active Record
+## Active Record
 
 guides.rubyonrails.org -> Models -> Active Record Basics https://guides.rubyonrails.org/active_record_basics.html
 
-### Facade Design pattern (front end of Doubtfire)
+## Facade Design pattern (front end of Doubtfire)
 
 The facade pattern is a software-design pattern commonly used in object-oriented programming. Analogous to a facade in
 architecture, a facade is an object that serves as a front-facing interface masking more complex underlying or
@@ -355,9 +330,9 @@ In other words, **a simplified API (facade) with required user functions are pro
 access the required functionality through the API's methods, without needing to understand the underlying complexities
 of the system.
 
-<!-- TODO: ![Imgur](https://imgur.com/OziTXxv.png) _The Facade design pattern_ -->
+![The Facade design pattern](/guides/overview/facade.png)
 
-#### When to use Facade pattern
+### When to use Facade pattern
 
 Developers often use the facade design pattern when a system is very complex or difficult to understand because the
 system may have many interdependent classes. **This pattern hides the complexities of the larger system and provides a
@@ -365,56 +340,46 @@ simpler interface to the client.**
 
 ---
 
-<!-- TODO: <a id="install"></a> -->
-
-## Installing the Development Environment
+# Installing the Development Environment
 
 ---
 
-<!-- TODO: <a id="code"></a> -->
+# Code Exploration
 
-## Code Exploration
+## Doubtfire-API
 
-### Doubtfire-API
-
-#### Database and Object model mapping
+### Database and Object model mapping
 
 The database is found in **app > db > schema.rb**. It shows the current version of the database, which consists of the
 various create_table statements to create the database structure. Schema.rb tells us the different tables in the
 database and the values they contain.
 
-<!-- TODO: ![Imgur](https://imgur.com/pCR4bwz.jpg) _Schema.rb_ -->
+![Schema.rb](/guides/overview/schema-ruby.jpg)
 
 Doubtfire uses the Object model, where all the objects are found in app > models folder. We can then map the "projects"
 table in schema.rb, to the project.rb object in the **app > models** folder. Whereas the "projects" table contains the
 definition of the attributes of the object, the project.rb object contains the functionality.
 
-<!-- TODO: ![Imgur](https://imgur.com/vZQhJlK.jpg) _Mapping of Projects Table (left) with Project Object (right)_ -->
+![Mapping of Projects Table (left) with Project Object (right)](/guides/overview/project-schema-to-object-mapping.jpg)
 
-Doubtfire utilises the migrations feature of Active Record to incrementally modify the database, and then regenerate the
+Doubtfire utilizes the migrations feature of Active Record to incrementally modify the database, and then regenerate the
 schema definition.
 
 To look into this further, one should look at the various tables in **schema.rb** and their corresponding mappings with
 their Object classes and class functions in the **app > models** folder.
 
-### Doubtfire-Web
+## Doubtfire-Web
 
 ---
 
-<!-- TODO: <a id="uml"></a> -->
-
-## UML Class Diagrams
+# UML Class Diagrams
 
 ---
 
-<!-- TODO: <a id="contrib"></a> -->
-
-## Contributing
+# Contributing
 
 ---
 
-<!-- TODO: <a id="refs"></a> -->
-
-## Useful References
+# Useful References
 
 ---

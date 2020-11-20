@@ -8,18 +8,18 @@ Each tutorial in Doubtfire should have an assigned teaching staff member, to ens
 tutorial are directed to the correct teaching staff. To assign a tutor to a tutorial, simply log in to Doubtfire, and
 select manage units from the Administration dropdown:
 
-<!-- TODO: <img alt="Select Unit" src="/images/articles/staff/assign-staff-to-tutorial/manage-units.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Manage units](/guides/assign-teacher-to-tutorial/manage-units.png)
 
 Next, Select the appropriate unit to administer:
 
-<!-- TODO: <img alt="Select Unit" src="/images/articles/staff/assign-staff-to-tutorial/select-unit.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Select unit](/guides/assign-teacher-to-tutorial/select-unit.png)
 
 First, select the _staff_ tab to ensure that the tutor you wish to assign is enrolled in the unit, and has the correct
 permission:
 
-<!-- TODO: <img alt="Select Unit" src="/images/articles/staff/assign-staff-to-tutorial/staff-tab.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Staff tab](/guides/assign-teacher-to-tutorial/staff-tab.png)
 
 Once that is done, select the _tutorials_ tab, and select the tutorial in the list you wish to assign a tutor to, then
 from the _Tutor_ dropdown, select the appropriate tutor:
 
-<!-- TODO: <img alt="Select Unit" src="/images/articles/staff/assign-staff-to-tutorial/edit-tutorial.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Edit tutorial](/guides/assign-teacher-to-tutorial/edit-tutorial.png)

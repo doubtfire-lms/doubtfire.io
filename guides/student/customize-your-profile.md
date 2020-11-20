@@ -13,14 +13,14 @@ In Doubtfire, your profile contains the following customizable information:
 - Avatar
 - Analytics
 
-To customise your profile, log in to Doubtfire and select the dropdown in the top right corner of the screen and select
+To customize your profile, log in to Doubtfire and select the dropdown in the top right corner of the screen and select
 _profile_:
 
-<!-- TODO: <img alt="Profile Dropdown" src="/images/articles/students/customise-profile/profile-dropown.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Profile dropdown](/guides/customize-your-profile/profile-dropdown.png)
 
-The modal which appears will allow you to customise all profile fields in Doubtfire:
+The modal which appears will allow you to customize all profile fields in Doubtfire:
 
-<!-- TODO: <img alt="Profile Dropdown" src="/images/articles/students/customise-profile/profile-page.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Profile page](/guides/customize-your-profile/profile-page.png)
 
-_Note:_ Doubtfire uses Gravatar for changing your profile picture, selecting _change avatar_ will open the appropriate
-Gravatar documentation.
+**Note:** Doubtfire uses [Gravatar](https://en.gravatar.com/) for changing your profile picture. Selecting _change
+avatar_ will open the appropriate Gravatar documentation.

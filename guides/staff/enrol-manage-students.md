@@ -17,15 +17,15 @@ All of these actions take place in the student tab of the unit administration pa
 
 After logging into Doubtfire, select the "Administer Units" section
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/administer-units.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Administer units](/guides/enrol-manage-students/administer-units.png)
 
 And select the unit you are administering:
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/select-unit.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Select units](/guides/enrol-manage-students/select-unit.png)
 
 Finally, select the **student** tab:
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/view-students.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![View students](/guides/enrol-manage-students/view-students.png)
 
 From the students page, you can perform the various student administration tasks.
 
@@ -44,18 +44,20 @@ enrollment (even if there are no enrolled students), to view the format and fiel
 To manually enroll a student, select the green **Enroll Student** button on the bottom right-hand side of the page, and
 simply enter the student ID and tutorial code.
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/manually-enrol.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Manually enrol](/guides/enrol-manage-students/manually-enrol.png)
 
-_Note_: The student account must already be created in Doubtfire, you can ensure this by asking the student to log in
-once. _Note_: If the Tutorial Code is left blank (if not yet known), the student will still be enrolled, however no
-tutorial will be assigned.
+**Note:** The student account must already be created in Doubtfire, you can ensure this by asking the student to log in
+once.
+
+**Note:** If the Tutorial Code is left blank (if not yet known), the student will still be enrolled, however no tutorial
+will be assigned.
 
 # Manually Withdraw
 
 To withdraw a student from the unit in Doubtfire, simply click the green tick box in the "Enrolled" column for the
 appropriate student:
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/view-students.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![View students](/guides/enrol-manage-students/view-students.png)
 
 # View or Change Student Allocation
 
@@ -64,7 +66,7 @@ assigned tutorial code. For example, in the image above, student_23 is enrollde 
 
 To change this allocation, simply select the dropdown box and change the tutorial to one of the options presented:
 
-<!-- TODO: <img alt="Administer Units" src="/images/articles/staff/enrol-manage-students/change-class.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Change class](/guides/enrol-manage-students/change-class.png)
 
 # View student page
 

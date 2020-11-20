@@ -90,7 +90,7 @@ export default {
     'grade-portfolios',
     'create-manage-tasks',
     'create-manage-users',
-    'enroll-manage-students',
+    'enrol-manage-students',
     'create-manage-student-groups',
     'assign-teacher-to-tutorial',
     'unit-statistics',

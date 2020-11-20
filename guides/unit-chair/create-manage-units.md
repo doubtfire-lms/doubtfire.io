@@ -9,19 +9,19 @@ and log in to Doubtfire.
 
 1. After logging in to Doubtfire, select _Administration_ -> _Manage Units_ from the menu on the top right menu.
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/manage-units.png" style="width: 700px; display:block; margin: 0 auto;"></img> 2. -->
+   ![Manage Units](/guides/create-manage-units/manage-units.png)
 
 1. Select _create unit_
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/create-unit.png" style="width: 700px; display:block; margin: 0 auto;"></img> 3. -->
+   ![Manage Units](/guides/create-manage-units/create-unit.png)
 
 1. Enter the name and unit code of the unit:
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/enter-name.png" style="width: 700px; display:block; margin: 0 auto;"></img> 4. -->
+   ![Manage Units](/guides/create-manage-units/enter-name.png)
 
 1. After the unit is created, select the newely created unit from the list of units:
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/select-created-unit.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+   ![Manage Units](/guides/create-manage-units/select-created-unit.png)
 
 Now that the unit is created, there are a number of settings which must be populate before the unit can be properly
 used:
@@ -39,7 +39,7 @@ Enter all details:
 - End Date
 - Active (Whether or not the unit will is open)
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/unit-details.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Manage Units](/guides/create-manage-units/unit-details.png)
 
 # Learning Outcomes
 
@@ -47,7 +47,7 @@ Select the second tab: _Learning Outcomes_
 
 Add or delete learning outcomes for the unit by filling the fields in the _Add Outcome_ modal.
 
-<!-- TODO: <img alt="Manage Units" src="/images/articles/staff/create-manage-units/learning-outcomes.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Manage Units](/guides/create-manage-units/learning-outcomes.png)
 
 Learning Outcomes can also be batch uploaded or downloaded, by using a CSV file in the right-hand-side upload/download
 panel.
@@ -63,7 +63,7 @@ _Note:_ The search field will autocompelte the staff members name, if the staff 
 unit is not appearing, ensure the name is spelled correctly, and that the user has previously added to the Doubtfire
 system. See the enrolling users guide for more details.
 
-<!-- TODO: <img alt="Staff" src="/images/articles/staff/create-manage-units/staff.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Staff](/guides/create-manage-units/staff.png)
 
 # Tutorials
 
@@ -72,7 +72,7 @@ Select the fourth tab: _Tutorials_
 Tutorials include the physical and cloud/online tutorials for a unit for which students will attend. Each tutorial will
 have a tutor from the teaching staff for the unit assigned.
 
-<!-- TODO: <img alt="Tutorials" src="/images/articles/staff/create-manage-units/tutorials.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Tutorials](/guides/create-manage-units/tutorials.png)
 
 To create a new tutorial, simply select the _Add Tutorial_ button, and fill in the fields in the modal. This includes:
 
@@ -104,7 +104,7 @@ step. You should align each task to demonstrate how strongly it relates to a lea
 For example, in this screenshot, task 1.1P Strongly aligns with the _CT_ learning outcome (Critical Thinking), but only
 weakly (2/5) aligns with the _W_ (Writing) learning outcome. You can present a rationale for each alignment.
 
-<!-- TODO: <img alt="Task Alignment" src="/images/articles/staff/create-manage-units/task-alignment.png" style="width: 700px; display:block; margin: 0 auto;"></img> -->
+![Task Alignment](/guides/create-manage-units/task-alignment.png)
 
 # Groups
 
