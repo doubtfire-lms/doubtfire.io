@@ -1,3 +1,5 @@
+// TODO: Document!
+
 /**
  * Audiences that a guide could be targeted at.
  */
@@ -6,13 +8,25 @@ export type Audience = 'all' | 'student' | 'staff' | 'unit-chair' | 'developer';
 /**
  * FrontMatter expected on each guide.
  */
-export type GuideFrontMatter = {
+export type RawGuideFrontMatter = {
   title: string;
   summary: string;
   authors: string;
 };
 
-// TODO: Document members.
+export type ParsedGuideFrontMatter = {
+  title: string;
+  summary: string;
+  authors: string[];
+};
+
+export const parseFrontMatter = (raw: RawGuideFrontMatter): ParsedGuideFrontMatter => {
+  return {
+    ...raw,
+    authors: raw.authors.split(',').map((a) => a.trim()),
+  };
+};
+
 type Metadata = {
   authorNames: { [name: string]: string };
   audienceLabels: {

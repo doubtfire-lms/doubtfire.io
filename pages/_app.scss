@@ -1,0 +1,33 @@
+// TODO: Import only components that are necessary.
+@use 'bulma/bulma.sass';
+@use 'pattern.css/pattern.scss';
+
+html {
+  overflow-y: auto;
+}
+
+.content {
+  .hint {
+    @extend .box;
+    @extend .p-3;
+
+    &.tip {
+      @extend .has-background-success-light;
+    }
+
+    &.warn {
+      @extend .has-background-warning-light;
+    }
+
+    &.error {
+      @extend .has-background-danger-light;
+    }
+  }
+  pre {
+    @extend .p-0;
+
+    code {
+      @extend .p-4;
+    }
+  }
+}

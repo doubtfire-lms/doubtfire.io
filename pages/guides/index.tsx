@@ -7,16 +7,13 @@ import matter from 'gray-matter';
 
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
-import Meta, { Audience, GuideFrontMatter } from '../../guides/Meta';
+import Meta, { Audience, RawGuideFrontMatter, ParsedGuideFrontMatter, parseFrontMatter } from '../../guides/Meta';
 
 type Props = {
   guides: {
-    [audience in Audience]?: {
+    [audience in Audience]?: (ParsedGuideFrontMatter & {
       id: string;
-      title: string;
-      summary: string;
-      authors: string[];
-    }[];
+    })[];
   };
 };
 
@@ -31,13 +28,11 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     const guides = (await fs.readdir(`guides/${audience}`)).map((n) => n.replace(/\.md$/, ''));
 
     for (const guide of guides) {
-      const markdown = await fs.readFile(`guides/${audience}/${guide}.md`, { encoding: 'utf-8' });
-      const front = matter(markdown);
+      const { data: front } = matter(await fs.readFile(`guides/${audience}/${guide}.md`, { encoding: 'utf-8' }));
 
       props.guides[audience].push({
         id: guide,
-        ...(front.data as GuideFrontMatter),
-        authors: (front.data.authors as string).split(',').map((a) => a.trim()),
+        ...parseFrontMatter(front as RawGuideFrontMatter),
       });
 
       props.guides[audience] = props.guides[audience].sort(
@@ -86,7 +81,9 @@ const GuidesPage: FC<Props> = ({ guides }) => {
                           {Meta.orderedAudiences
                             .filter((a) => a in guides)
                             .map((a) => (
-                              <button className="button">{Meta.audienceLabels[a].singular}</button>
+                              <button key={`audience-button-${a}`} className="button">
+                                {Meta.audienceLabels[a].singular}
+                              </button>
                             ))}
                         </div>
                       </div>
