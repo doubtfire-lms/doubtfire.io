@@ -24,10 +24,9 @@ html {
     }
   }
   pre {
-    @extend .p-0;
-
-    code {
-      @extend .p-4;
+    code.hljs {
+      @extend .p-0;
+      background-color: transparent;
     }
   }
 }
