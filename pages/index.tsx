@@ -1,9 +1,10 @@
 import { FC } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 import Footer from '../components/Footer';
 
-const index: FC = () => {
+const IndexPage: FC = () => {
   return (
     <>
       <Head>
@@ -23,10 +24,12 @@ const index: FC = () => {
               </p>
               <br />
               <div className="buttons is-centered">
-                <a href="#" className="button">
-                  <img src="/images/book.svg" alt="Guides" width="18" />
-                  &nbsp; Guides
-                </a>
+                <Link href="/guides">
+                  <a className="button">
+                    <img src="/images/book.svg" alt="Guides" width="18" />
+                    &nbsp; Guides
+                  </a>
+                </Link>
                 <a href="https://github.com/orgs/doubtfire-lms/" className="button" target="_blank">
                   <img src="/images/github.svg" alt="GitHub" width="18" />
                   &nbsp; GitHub
@@ -43,4 +46,4 @@ const index: FC = () => {
   );
 };
 
-export default index;
+export default IndexPage;
