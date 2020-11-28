@@ -101,6 +101,7 @@ const GuidesPage: FC<Props> = ({ guides }) => {
               .filter((a) => a in guides)
               .map((a, i) => (
                 <div
+                  id={a}
                   key={`audience-${a}`}
                   className={`block pt-6 pb-5 px-5 ${i % 2 !== 0 ? 'pattern-dots-lg' : ''}`}
                   style={{ color: '#DDD' }}>
@@ -109,7 +110,7 @@ const GuidesPage: FC<Props> = ({ guides }) => {
                       <h2 className={`title ${Meta.audienceLabels[a].summary ? 'mb-2' : ''}`}>
                         <span className="has-background-white">
                           For {Meta.audienceLabels[a].plural}
-                          &nbsp;<a href={`#${Meta.audienceLabels[a].singular}`}>&sect;</a>
+                          &nbsp;<a href={`#${a}`}>&sect;</a>
                         </span>
                       </h2>
                       {Meta.audienceLabels[a].summary && (

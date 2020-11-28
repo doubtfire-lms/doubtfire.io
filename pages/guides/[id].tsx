@@ -129,11 +129,13 @@ const GuidePage: FC<Props> = (props) => {
                         <a>Guides</a>
                       </Link>
                     </li>
-                    <li>
-                      <Link href={`/guides#${props.audience}`}>
-                        <a className="has-background-white">{Meta.audienceLabels[props.audience].singular}</a>
-                      </Link>
-                    </li>
+                    {props.audience !== 'all' && (
+                      <li>
+                        <Link href={`/guides#${props.audience}`}>
+                          <a className="has-background-white">{Meta.audienceLabels[props.audience].singular}</a>
+                        </Link>
+                      </li>
+                    )}
                   </ul>
                 </nav>
                 <h1 className="title is-1 mb-4">
@@ -158,7 +160,7 @@ const GuidePage: FC<Props> = (props) => {
         </div>
         <div className="columns is-centered">
           <div className="column is-two-thirds">
-            <div className="content pt-6" dangerouslySetInnerHTML={{ __html: props.html }}></div>
+            <div className="content guide-content pt-6" dangerouslySetInnerHTML={{ __html: props.html }}></div>
           </div>
         </div>
         <Footer />

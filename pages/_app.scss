@@ -6,7 +6,10 @@ html {
   overflow-y: auto;
 }
 
-.content {
+.guide-content {
+  line-height: 1.8em;
+  font-size: 1.15em;
+
   .hint {
     @extend .box;
     @extend .p-3;
@@ -23,10 +26,26 @@ html {
       @extend .has-background-danger-light;
     }
   }
+
   pre {
     code.hljs {
       @extend .p-0;
       background-color: transparent;
     }
+  }
+
+  img {
+    &:not(.inline) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @extend .mt-6;
   }
 }
