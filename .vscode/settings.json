@@ -1,7 +1,8 @@
 {
   "files.exclude": {
     "node_modules": true,
-    ".next": true
+    ".next": true,
+    "out": true
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -12,9 +13,13 @@
     "Doubtfire",
     "bulma",
     "fullheight",
+    "highlightjs",
+    "hljs",
     "hoverable",
     "jakerenzella",
     "macite",
-    "prettierrc"
+    "prettierrc",
+    "rehype",
+    "unist"
   ]
 }

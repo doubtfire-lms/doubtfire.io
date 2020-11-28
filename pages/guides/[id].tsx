@@ -7,19 +7,17 @@ import Link from 'next/link';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
 
-import remark from 'remark';
+import unified from 'unified';
 import remarkSlug from 'remark-slug';
-import remarkHtml from 'remark-html';
 import remarkHint from 'remark-hint';
+import remarkParse from 'remark-parse';
 import remarkBehead from 'remark-behead';
+import remark2rehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import remarkHighlightJs from 'remark-highlight.js';
 import remarkExternalLinks from 'remark-external-links';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
-
-import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
 
 import hljs from 'highlight.js/lib/core';
 import hljsLanguageShell from 'highlight.js/lib/languages/shell';
@@ -27,11 +25,15 @@ import hljsLanguageBash from 'highlight.js/lib/languages/bash';
 import hljsLanguageMarkdown from 'highlight.js/lib/languages/markdown';
 import 'highlight.js/styles/default.css';
 
+import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+
 type Props = ParsedGuideFrontMatter & {
   id: string;
   audience: Audience;
   markdown: string;
-  renderedMarkdown: string;
+  html: string;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -67,7 +69,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     await fs.readFile(`guides/${audience}/${id}.md`, { encoding: 'utf-8' })
   );
 
-  const processed = await remark()
+  const processed = await unified()
+    .use(remarkParse)
     .use(remarkA11yEmoji)
     .use(remarkExternalLinks)
     .use(remarkHint)
@@ -85,7 +88,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       },
     })
     .use(remarkHighlightJs)
-    .use(remarkHtml)
+    .use(remark2rehype)
+    .use(rehypeStringify)
     .process(markdown);
 
   return {
@@ -94,7 +98,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       audience,
       markdown,
       ...parseFrontMatter(front as RawGuideFrontMatter),
-      renderedMarkdown: processed.toString(),
+      html: processed.toString(),
     },
   };
 };
@@ -154,7 +158,7 @@ const GuidePage: FC<Props> = (props) => {
         </div>
         <div className="columns is-centered">
           <div className="column is-two-thirds">
-            <div className="content pt-6" dangerouslySetInnerHTML={{ __html: props.renderedMarkdown }}></div>
+            <div className="content pt-6" dangerouslySetInnerHTML={{ __html: props.html }}></div>
           </div>
         </div>
         <Footer />
