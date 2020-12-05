@@ -11,6 +11,7 @@
     "AGPL",
     "Affero",
     "Doubtfire",
+    "Scrollspy",
     "bulma",
     "fullheight",
     "highlightjs",
@@ -18,6 +19,7 @@
     "hoverable",
     "jakerenzella",
     "macite",
+    "mdast",
     "prettierrc",
     "rehype",
     "unist"

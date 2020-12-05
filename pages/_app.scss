@@ -7,6 +7,8 @@ html {
 }
 
 .guide-content {
+  @extend .content;
+
   line-height: 1.8em;
   font-size: 1.15em;
 
@@ -46,6 +48,21 @@ html {
   h4,
   h5,
   h6 {
-    @extend .mt-6;
+    &:not(:first-child) {
+      @extend .mt-6;
+    }
+  }
+}
+
+.guide-toc {
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  p.guide-toc-item {
+    &.is-active {
+      font-weight: bold;
+    }
   }
 }

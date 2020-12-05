@@ -8,11 +8,13 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 
 import unified from 'unified';
+import unistVisit from 'unist-util-visit';
 import remarkSlug from 'remark-slug';
 import remarkHint from 'remark-hint';
 import remarkParse from 'remark-parse';
 import remarkBehead from 'remark-behead';
 import remark2rehype from 'remark-rehype';
+import mdastToString from 'mdast-util-to-string';
 import rehypeStringify from 'rehype-stringify';
 import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import remarkHighlightJs from 'remark-highlight.js';
@@ -28,12 +30,20 @@ import 'highlight.js/styles/default.css';
 import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
+import Scrollspy from 'react-scrollspy';
+
+type TocItem = {
+  id: string;
+  depth: number;
+  text: string;
+};
 
 type Props = ParsedGuideFrontMatter & {
   id: string;
   audience: Audience;
   markdown: string;
   html: string;
+  toc: TocItem[];
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -69,28 +79,40 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     await fs.readFile(`guides/${audience}/${id}.md`, { encoding: 'utf-8' })
   );
 
-  const processed = await unified()
+  const toc: TocItem[] = [];
+
+  const processor = unified()
     .use(remarkParse)
     .use(remarkA11yEmoji)
     .use(remarkExternalLinks)
     .use(remarkHint)
-    .use(remarkBehead, { depth: 1 })
     .use(remarkSlug)
+    .use(() => {
+      return (tree) => {
+        unistVisit(tree, 'heading', (node) => {
+          const item: TocItem = {
+            id: node.data.id as string,
+            text: mdastToString(node),
+            depth: node.depth as number,
+          };
+          toc.push(item);
+        });
+      };
+    })
     .use(remarkAutolinkHeadings, {
       behavior: 'append',
       content: {
         type: 'element',
         tagName: 'span',
-        children: [
-          { type: 'text', value: ' ' },
-          { type: 'text', value: '§' },
-        ],
+        children: [{ type: 'text', value: ' §' }],
       },
     })
+    .use(remarkBehead, { depth: 1 })
     .use(remarkHighlightJs)
     .use(remark2rehype)
-    .use(rehypeStringify)
-    .process(markdown);
+    .use(rehypeStringify);
+
+  const processed = await processor.process(markdown);
 
   return {
     props: {
@@ -99,6 +121,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       markdown,
       ...parseFrontMatter(front as RawGuideFrontMatter),
       html: processed.toString(),
+      toc,
     },
   };
 };
@@ -121,7 +144,7 @@ const GuidePage: FC<Props> = (props) => {
         <div className="hero pattern-dots-lg" style={{ color: '#DDD' }}>
           <div className="hero-body">
             <div className="columns is-centered">
-              <div className="column is-two-thirds px-0">
+              <div className="column is-four-fifths px-0">
                 <nav className="breadcrumb">
                   <ul>
                     <li>
@@ -159,8 +182,29 @@ const GuidePage: FC<Props> = (props) => {
           </div>
         </div>
         <div className="columns is-centered">
-          <div className="column is-two-thirds">
-            <div className="content guide-content pt-6" dangerouslySetInnerHTML={{ __html: props.html }}></div>
+          <div className="column is-four-fifths pt-6">
+            <div className="columns">
+              <aside className="column is-one-quarter is-size-6">
+                <div className="guide-toc">
+                  <strong>Contents</strong>
+                  <Scrollspy items={props.toc.map((t) => t.id)} currentClassName="is-active" componentTag="div">
+                    {props.toc.map((item) => (
+                      <p
+                        className="guide-toc-item"
+                        key={`toc/${item.id}`}
+                        style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
+                        <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
+                          {item.text}
+                        </a>
+                      </p>
+                    ))}
+                  </Scrollspy>
+                </div>
+              </aside>
+              <div className="column">
+                <main className="guide-content" dangerouslySetInnerHTML={{ __html: props.html }}></main>
+              </div>
+            </div>
           </div>
         </div>
         <Footer />
