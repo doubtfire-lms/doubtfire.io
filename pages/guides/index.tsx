@@ -1,20 +1,25 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
+import Fuse from 'fuse.js';
 
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
 import Meta, { Audience, RawGuideFrontMatter, ParsedGuideFrontMatter, parseFrontMatter } from '../../guides/Meta';
 
+type GuideForAudience = ParsedGuideFrontMatter & {
+  id: string;
+};
+
+type GuideCollection = {
+  [audience in Audience]?: GuideForAudience[];
+};
+
 type Props = {
-  guides: {
-    [audience in Audience]?: (ParsedGuideFrontMatter & {
-      id: string;
-    })[];
-  };
+  guides: GuideCollection;
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
@@ -44,7 +49,42 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   return { props };
 };
 
-const GuidesPage: FC<Props> = ({ guides }) => {
+const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
+  const [query, setQuery] = useState('');
+  const [queryAudience, setQueryAudience] = useState<Audience>('all');
+  const [guides, setGuides] = useState(allGuides);
+
+  useEffect(() => {
+    const copy: GuideCollection = {};
+
+    const searchAudience = (aud: Audience) => {
+      const fuse = new Fuse(allGuides[aud], {
+        isCaseSensitive: false,
+        keys: ['title', 'summary'],
+        threshold: 0.4,
+      });
+
+      if (query) {
+        copy[aud] = fuse.search(query).map((r) => r.item);
+      } else {
+        copy[aud] = allGuides[aud];
+        if (!('all' in copy)) {
+          copy['all'] = allGuides['all'];
+        }
+      }
+    };
+
+    if (queryAudience === 'all') {
+      for (const a in allGuides) {
+        searchAudience(a as Audience);
+      }
+    } else {
+      searchAudience(queryAudience);
+    }
+
+    setGuides(copy);
+  }, [query, queryAudience]);
+
   return (
     <>
       <Head>
@@ -67,11 +107,18 @@ const GuidesPage: FC<Props> = ({ guides }) => {
                         <label className="label">Search</label>
                       </div>
                       <div className="control">
-                        <input type="text" className="input" placeholder="Type here to search" />
+                        <input
+                          type="text"
+                          className="input is-small"
+                          placeholder="Type here to search"
+                          onChange={(e) => {
+                            setQuery(e.target.value.trim());
+                          }}
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="column">
+                  <div className="column is-narrow">
                     <div className="field">
                       <div className="label">
                         <label className="label">Audience</label>
@@ -79,9 +126,12 @@ const GuidesPage: FC<Props> = ({ guides }) => {
                       <div className="control">
                         <div className="buttons has-addons">
                           {Meta.orderedAudiences
-                            .filter((a) => a in guides)
+                            .filter((a) => a in allGuides)
                             .map((a) => (
-                              <button key={`audience-button-${a}`} className="button">
+                              <button
+                                key={`audience-button-${a}`}
+                                className={`button is-small ${queryAudience === a ? 'is-link' : ''}`}
+                                onClick={() => setQueryAudience(a)}>
                                 {Meta.audienceLabels[a].singular}
                               </button>
                             ))}
@@ -98,7 +148,7 @@ const GuidesPage: FC<Props> = ({ guides }) => {
           {/* TODO: Only 1 column here so .column might not be necessary */}
           <div className="column">
             {Meta.orderedAudiences
-              .filter((a) => a in guides)
+              .filter((a) => a in guides && guides[a].length > 0)
               .map((a, i) => (
                 <div
                   id={a}
