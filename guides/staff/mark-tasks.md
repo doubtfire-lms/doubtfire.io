@@ -39,7 +39,7 @@ after logging in to Doubtfire, and selecting a unit.
 
    ![Updated task](/guides/mark-tasks/task-marked-updated.png)
 
-1. Leave a comment At any time during this process, you can leave a written, audio or image comment on the task. These
+1. Leave a comment. At any time during this process, you can leave a written, audio or image comment on the task. These
    comments are specific to each individual task between the teaching staff and the student. To leave an audio comment,
    simply click the _microphone_ icon, and click "record". Ensure you are using a modern browser if audio comments are
    not working. Image comments can be uploaded by dragging the image into the comment field, and clicking send.

@@ -55,9 +55,9 @@ sort by progress -- an easy way to view students who are not progressing through
 
 The glags column provides one of three icon:
 
-- Target Grade - Letter/s indicating the target grade, for example _student_23_ is targeting a credit _C_ grade.
-- Portfolio Generated - if the Book icon is present, then the student has generated a portfolio in the unit.
-- Eye icon - If Doubtfire has detected possible similarities between student work, then an eye icon will be present.
+- **Target Grade:** Letter/s indicating the target grade, for example _student_23_ is targeting a credit _C_ grade.
+- **Portfolio Generated:** if the Book icon is present, then the student has generated a portfolio in the unit.
+- **Eye icon:** If Doubtfire has detected possible similarities between student work, then an eye icon will be present.
 
 ## Tutorials
 
@@ -68,9 +68,9 @@ clicking the dropdown and changing the tutorial.
 
 On the bottom-right hand side of the page, there are two buttons: _Export CSV_ and _enrol Student_.
 
-- Export CSV: Exports a CSV of the information presented including name, student ID, progress, flags and tutorial
+- **Export CSV:** Exports a CSV of the information presented including name, student ID, progress, flags and tutorial
   allocation.
-- Enrol Student: Manually enrolls a student into the unit.
+- **Enrol Student:** Manually enrolls a student into the unit.
 
 # Task List
 
@@ -97,5 +97,5 @@ The center panel displays the task sheet PDF which will be presented to students
 The task details, located on the right panel, show the intended learning outcomes for the selected task, the
 description, and key information such as the task level, target date, and due date (if applicable).
 
-_Note:_ Task information can no be changed from the task list, it can be changed from the _unit administration_ ->
-_task_ tab.
+?> **Note:** Task information can not be changed from the task list, it can be changed from the _Unit Administration_ ->
+_Task_ tab.

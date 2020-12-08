@@ -46,7 +46,7 @@ Most of the statistics can be broken down into 3 categories noted by the three-s
 
 1. Chart Icon - indicates the shown statistics are broken down by task.
 
-![Task Stats](/guides/unit-statistics/switch-view-2.png)
+   ![Task Stats](/guides/unit-statistics/switch-view-2.png)
 
 **Note:** These categories apply to multiple statistics views.
 

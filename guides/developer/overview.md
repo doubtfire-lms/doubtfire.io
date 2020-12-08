@@ -105,10 +105,10 @@ Doubtfire API is the backend - server side - and uses the Ruby on Rails framewor
 
 Grape API is a Restful API. Access to the API via http verbs:
 
-- get - read data
-- put - change data
-- post - create data
-- delete - delete data
+- GET - read data
+- PUT - change data
+- POST - create data
+- DELETE - delete data
 
 Firstly we need to start the Rails server by navigating to the doubtfire-api folder and running:
 
@@ -120,12 +120,12 @@ Once you have Rail server running, navigate to 0.0.0.0:3000/api/docs/, it gives 
 
 ![Doubtfire API documentation](/guides/overview/api-documentation.png)
 
-For example, clicking on "users" shows endpoints such as Get, Post, etc, which represent the same in the code
+For example, clicking on "users" shows endpoints such as GET, POST, etc, which represent the same in the code
 users_api.rb
 
 ![Users API](/guides/overview/users-api.jpg)
 
-The endpoints above (Get, Post, etc) are found in the code in users_api.rb, as below.
+The endpoints above (GET, POST, etc) are found in the code in users_api.rb, as below.
 
 ![users_api.rb file](/guides/overview/users-api-ruby.jpg)
 
@@ -150,8 +150,10 @@ click on "auth":
 
 Then click on "POST" to sign in, using:
 
-    username: aadmin
-    password: password
+```
+username: aadmin
+password: password
+```
 
 ![Signing in](/guides/overview/auth-endpoint.jpg)
 
