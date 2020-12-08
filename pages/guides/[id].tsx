@@ -186,23 +186,25 @@ const GuidePage: FC<Props> = (props) => {
         <div className="columns is-centered">
           <div className="column is-four-fifths pt-6">
             <div className="columns">
-              <aside className="column is-one-quarter is-size-6">
-                <div className="guide-toc">
-                  <strong>Contents</strong>
-                  <Scrollspy items={props.toc.map((t) => t.id)} currentClassName="is-active" componentTag="div">
-                    {props.toc.map((item) => (
-                      <p
-                        className="guide-toc-item"
-                        key={`toc/${item.id}`}
-                        style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
-                        <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
-                          {item.text}
-                        </a>
-                      </p>
-                    ))}
-                  </Scrollspy>
-                </div>
-              </aside>
+              {props.toc.length > 0 && (
+                <aside className="column is-one-quarter is-size-6">
+                  <div className="guide-toc">
+                    <strong>Contents</strong>
+                    <Scrollspy items={props.toc.map((t) => t.id)} currentClassName="is-active" componentTag="div">
+                      {props.toc.map((item) => (
+                        <p
+                          className="guide-toc-item"
+                          key={`toc/${item.id}`}
+                          style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
+                          <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
+                            {item.text}
+                          </a>
+                        </p>
+                      ))}
+                    </Scrollspy>
+                  </div>
+                </aside>
+              )}
               <div className="column">
                 <main className="guide-content" dangerouslySetInnerHTML={{ __html: props.html }}></main>
               </div>
