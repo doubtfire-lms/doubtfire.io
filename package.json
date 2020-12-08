@@ -18,6 +18,7 @@
     "pattern.css": "^1.0.0",
     "react": "16.13.1",
     "react-dom": "17.0.1",
+    "react-responsive": "^8.2.0",
     "react-scrollspy": "^3.4.3"
   },
   "devDependencies": {
@@ -25,6 +26,7 @@
     "@types/highlightjs": "^10.1.0",
     "@types/node": "^14.11.2",
     "@types/react": "^16.9.49",
+    "@types/react-responsive": "^8.0.2",
     "@types/react-scrollspy": "^3.3.3",
     "@types/unist": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^4.7.0",

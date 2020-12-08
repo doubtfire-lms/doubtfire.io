@@ -1,11 +1,13 @@
 // TODO: Document!
 
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import fs from 'fs/promises';
 import matter from 'gray-matter';
+import Scrollspy from 'react-scrollspy';
+import { useMediaQuery } from 'react-responsive';
 
 import unified from 'unified';
 import rehypeRaw from 'rehype-raw';
@@ -31,7 +33,6 @@ import 'highlight.js/styles/default.css';
 import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
 import Nav from '../../components/Nav';
 import Footer from '../../components/Footer';
-import Scrollspy from 'react-scrollspy';
 
 type TocItem = {
   id: string;
@@ -136,6 +137,9 @@ const GuidePage: FC<Props> = (props) => {
     hljs.initHighlighting();
   }, []);
 
+  const isDesktop = useMediaQuery({ minWidth: 1024, screen: true });
+  const [isMobileTocVisible, setIsMobileTocVisible] = useState(false);
+
   return (
     <>
       <Head>
@@ -143,7 +147,7 @@ const GuidePage: FC<Props> = (props) => {
       </Head>
       <div className="container">
         <Nav />
-        <div className="hero pattern-dots-lg" style={{ color: '#DDD' }}>
+        <div className="hero pattern-dots-lg px-2" style={{ color: '#DDD' }}>
           <div className="hero-body">
             <div className="columns is-centered">
               <div className="column is-four-fifths px-0">
@@ -163,7 +167,7 @@ const GuidePage: FC<Props> = (props) => {
                     )}
                   </ul>
                 </nav>
-                <h1 className="title is-1 mb-4">
+                <h1 className="title is-2 mb-4">
                   <span className="has-background-white">{props.title}</span>
                 </h1>
                 <p className="is-size-5 has-text-black">
@@ -183,25 +187,36 @@ const GuidePage: FC<Props> = (props) => {
             </div>
           </div>
         </div>
-        <div className="columns is-centered">
+        <div className="columns is-centered px-5">
           <div className="column is-four-fifths pt-6">
-            <div className="columns">
+            <div className="columns is-multiline">
               {props.toc.length > 0 && (
-                <aside className="column is-one-quarter is-size-6">
+                <aside className="column is-full-mobile is-full-tablet is-one-quarter-desktop is-size-6">
                   <div className="guide-toc">
-                    <strong>Contents</strong>
-                    <Scrollspy items={props.toc.map((t) => t.id)} currentClassName="is-active" componentTag="div">
-                      {props.toc.map((item) => (
-                        <p
-                          className="guide-toc-item"
-                          key={`toc/${item.id}`}
-                          style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
-                          <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
-                            {item.text}
-                          </a>
-                        </p>
-                      ))}
-                    </Scrollspy>
+                    <div className="columns is-gapless is-mobile is-tablet is-align-items-center">
+                      <div className="column">
+                        <strong>Contents</strong>
+                      </div>
+                      <div className="column is-narrow is-hidden-desktop">
+                        <button className="button is-small" onClick={() => setIsMobileTocVisible((v) => !v)}>
+                          {isMobileTocVisible ? '🡡' : '🡣'}
+                        </button>
+                      </div>
+                    </div>
+                    {(isDesktop || isMobileTocVisible) && (
+                      <Scrollspy items={props.toc.map((t) => t.id)} currentClassName="is-active" componentTag="div">
+                        {props.toc.map((item) => (
+                          <p
+                            className="guide-toc-item"
+                            key={`toc/${item.id}`}
+                            style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
+                            <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
+                              {item.text}
+                            </a>
+                          </p>
+                        ))}
+                      </Scrollspy>
+                    )}
                   </div>
                 </aside>
               )}

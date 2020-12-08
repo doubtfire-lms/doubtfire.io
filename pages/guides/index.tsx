@@ -144,48 +144,43 @@ const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
             </div>
           </div>
         </div>
-        <div className="columns is-centered">
-          {/* TODO: Only 1 column here so .column might not be necessary */}
-          <div className="column">
-            {Meta.orderedAudiences
-              .filter((a) => a in guides && guides[a].length > 0)
-              .map((a, i) => (
-                <div
-                  id={a}
-                  key={`audience-${a}`}
-                  className={`block pt-6 pb-5 px-5 ${i % 2 !== 0 ? 'pattern-dots-lg' : ''}`}
-                  style={{ color: '#DDD' }}>
-                  {a !== 'all' && (
-                    <>
-                      <h2 className={`title ${Meta.audienceLabels[a].summary ? 'mb-2' : ''}`}>
-                        <span className="has-background-white">
-                          For {Meta.audienceLabels[a].plural}
-                          &nbsp;<a href={`#${a}`}>&sect;</a>
-                        </span>
-                      </h2>
-                      {Meta.audienceLabels[a].summary && (
-                        <p className="has-text-grey mb-4">
-                          <span className="has-background-white">{Meta.audienceLabels[a].summary}</span>
-                        </p>
-                      )}
-                    </>
+        {Meta.orderedAudiences
+          .filter((a) => a in guides && guides[a].length > 0)
+          .map((a, i) => (
+            <div
+              id={a}
+              key={`audience-${a}`}
+              className={`block pt-6 pb-5 px-5 ${i % 2 !== 0 ? 'pattern-dots-lg' : ''}`}
+              style={{ color: '#DDD' }}>
+              {a !== 'all' && (
+                <>
+                  <h2 className={`title ${Meta.audienceLabels[a].summary ? 'mb-2' : ''}`}>
+                    <span className="has-background-white">
+                      For {Meta.audienceLabels[a].plural}
+                      &nbsp;<a href={`#${a}`}>&sect;</a>
+                    </span>
+                  </h2>
+                  {Meta.audienceLabels[a].summary && (
+                    <p className="has-text-grey mb-4">
+                      <span className="has-background-white">{Meta.audienceLabels[a].summary}</span>
+                    </p>
                   )}
-                  <div className="columns is-multiline">
-                    {guides[a].map((g) => (
-                      <div key={`audience-${a}-guide-${g.id}`} className="column is-one-quarter">
-                        <Link href={`/guides/${g.id}`}>
-                          <a className="box p-3">
-                            <h3 className="subtitle is-5 mb-2">{g.title}</h3>
-                            <p className="has-text-grey">{g.summary}</p>
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
+                </>
+              )}
+              <div className="columns is-multiline">
+                {guides[a].map((g) => (
+                  <div key={`audience-${a}-guide-${g.id}`} className="column is-one-quarter">
+                    <Link href={`/guides/${g.id}`}>
+                      <a className="box p-3">
+                        <h3 className="subtitle is-5 mb-2">{g.title}</h3>
+                        <p className="has-text-grey">{g.summary}</p>
+                      </a>
+                    </Link>
                   </div>
-                </div>
-              ))}
-          </div>
-        </div>
+                ))}
+              </div>
+            </div>
+          ))}
         <Footer />
       </div>
     </>
