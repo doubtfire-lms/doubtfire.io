@@ -1,5 +1,3 @@
-// TODO: Document!
-
 import { FC, useEffect, useState } from 'react';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
@@ -9,6 +7,11 @@ import matter from 'gray-matter';
 import Scrollspy from 'react-scrollspy';
 import { useMediaQuery } from 'react-responsive';
 
+import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
+import Nav from '../../components/Nav';
+import Footer from '../../components/Footer';
+
+// Unified, Remark, Rehype imports & plugins.
 import unified from 'unified';
 import rehypeRaw from 'rehype-raw';
 import unistVisit from 'unist-util-visit';
@@ -24,15 +27,13 @@ import remarkHighlightJs from 'remark-highlight.js';
 import remarkExternalLinks from 'remark-external-links';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
 
+// Highlight.js imports.
 import hljs from 'highlight.js/lib/core';
+import 'highlight.js/styles/default.css';
+// Import the necessary languages here.
 import hljsLanguageShell from 'highlight.js/lib/languages/shell';
 import hljsLanguageBash from 'highlight.js/lib/languages/bash';
 import hljsLanguageMarkdown from 'highlight.js/lib/languages/markdown';
-import 'highlight.js/styles/default.css';
-
-import Meta, { Audience, ParsedGuideFrontMatter, parseFrontMatter, RawGuideFrontMatter } from '../../guides/Meta';
-import Nav from '../../components/Nav';
-import Footer from '../../components/Footer';
 
 type TocItem = {
   id: string;
@@ -49,11 +50,10 @@ type Props = ParsedGuideFrontMatter & {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  // Iterate the guides directory to retrieve their paths.
   const paths: string[] = [];
-
   for (const audience of Meta.orderedAudiences) {
     const guides = (await fs.readdir(`guides/${audience}`)).map((n) => n.replace(/\.md$/, ''));
-
     for (const guide of guides) {
       paths.push(`/guides/${guide}`);
     }
@@ -67,8 +67,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const id = params.id as string;
-  let audience: Audience;
 
+  // Identify the audience of the guide identified by `id` by locating it within the guides directory.
+  let audience: Audience;
   for (const _audience of Meta.orderedAudiences) {
     const guides = (await fs.readdir(`guides/${_audience}`)).map((n) => n.replace(/\.md$/, ''));
     if (guides.indexOf(id) !== -1) {
@@ -77,6 +78,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     }
   }
 
+  // Retrieve the markdown content and front matter of the guide.
   const { content: markdown, data: front } = matter(
     await fs.readFile(`guides/${audience}/${id}.md`, { encoding: 'utf-8' })
   );
@@ -84,11 +86,17 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
   const toc: TocItem[] = [];
 
   const processor = unified()
+    // Parse markdown.
     .use(remarkParse)
+    // Accessible emojis.
     .use(remarkA11yEmoji)
+    // Set _blank targets for external links.
     .use(remarkExternalLinks)
+    // Add tip/warning/hint blocks.
     .use(remarkHint)
+    // Generate IDs with slugs for headings.
     .use(remarkSlug)
+    // Populate `toc` array with each heading.
     .use(() => {
       return (tree) => {
         unistVisit(tree, 'heading', (node) => {
@@ -101,6 +109,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         });
       };
     })
+    // Append a link with an anchor to each heading.
     .use(remarkAutolinkHeadings, {
       behavior: 'append',
       content: {
@@ -109,10 +118,16 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         children: [{ type: 'text', value: ' §' }],
       },
     })
+    // Decrease heading levels (i.e. <h1> to <h2>, etc.).
+    // This allows top-level headings of guides to be <h1>s.
     .use(remarkBehead, { depth: 1 })
+    // Highlight block-level source code.
     .use(remarkHighlightJs)
+    // Convert to markdown AST to HTML AST.
     .use(remark2rehype, { allowDangerousHtml: true })
+    // Use literal HTML.
     .use(rehypeRaw)
+    // Stringify HTML.
     .use(rehypeStringify);
 
   const processed = await processor.process(markdown);
@@ -130,6 +145,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 };
 
 const GuidePage: FC<Props> = (props) => {
+  // Initialize highlight.js.
   useEffect(() => {
     hljs.registerLanguage('shell', hljsLanguageShell);
     hljs.registerLanguage('bash', hljsLanguageBash);
@@ -137,6 +153,7 @@ const GuidePage: FC<Props> = (props) => {
     hljs.initHighlighting();
   }, []);
 
+  // https://bulma.io/documentation/overview/responsiveness/
   const isDesktop = useMediaQuery({ minWidth: 1024, screen: true });
   const [isMobileTocVisible, setIsMobileTocVisible] = useState(false);
 
@@ -147,6 +164,7 @@ const GuidePage: FC<Props> = (props) => {
       </Head>
       <div className="container">
         <Nav />
+        {/* Header */}
         <div className="hero pattern-dots-lg px-2" style={{ color: '#DDD' }}>
           <div className="hero-body">
             <div className="columns is-centered">
@@ -187,9 +205,11 @@ const GuidePage: FC<Props> = (props) => {
             </div>
           </div>
         </div>
+        {/* Guide */}
         <div className="columns is-centered px-5">
           <div className="column is-four-fifths pt-6">
             <div className="columns is-multiline">
+              {/* Table of Contents */}
               {props.toc.length > 0 && (
                 <aside className="column is-full-mobile is-full-tablet is-one-quarter-desktop is-size-6">
                   <div className="guide-toc">
@@ -220,6 +240,7 @@ const GuidePage: FC<Props> = (props) => {
                   </div>
                 </aside>
               )}
+              {/* Guide body */}
               <div className="column">
                 <main className="guide-content" dangerouslySetInnerHTML={{ __html: props.html }}></main>
               </div>

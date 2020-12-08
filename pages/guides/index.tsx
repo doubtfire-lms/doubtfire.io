@@ -27,6 +27,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     guides: {},
   };
 
+  // Iterate over audiences, gather corresponding guides, parse front matter, populate `props` accordingly.
   for (const audience of Meta.orderedAudiences) {
     props.guides[audience] = [];
 
@@ -34,34 +35,43 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 
     for (const guide of guides) {
       const { data: front } = matter(await fs.readFile(`guides/${audience}/${guide}.md`, { encoding: 'utf-8' }));
-
       props.guides[audience].push({
         id: guide,
         ...parseFrontMatter(front as RawGuideFrontMatter),
       });
-
-      props.guides[audience] = props.guides[audience].sort(
-        (l, r) => Meta.orderedGuides.indexOf(l.id) - Meta.orderedGuides.indexOf(r.id)
-      );
     }
+
+    // Order guides of each audience.
+    props.guides[audience] = props.guides[audience].sort(
+      (l, r) => Meta.orderedGuides.indexOf(l.id) - Meta.orderedGuides.indexOf(r.id)
+    );
   }
 
   return { props };
 };
 
 const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
-  const [query, setQuery] = useState('');
-  const [queryAudience, setQueryAudience] = useState<Audience>('all');
+  /**
+   * Guides currently being displayed. Defaults to all guides, but may be a subset thereof, based on `query` and
+   * `queryAudience`.
+   */
   const [guides, setGuides] = useState(allGuides);
 
+  const [query, setQuery] = useState('');
+  const [queryAudience, setQueryAudience] = useState<Audience>('all');
+
+  // Filter `guides` according to `query` and `queryAudience`.
   useEffect(() => {
     const copy: GuideCollection = {};
 
+    /**
+     * Performs a fuzzy search of the specified audience `aud` of `allGuides` for guides that match `query`.
+     */
     const searchAudience = (aud: Audience) => {
       const fuse = new Fuse(allGuides[aud], {
         isCaseSensitive: false,
         keys: ['title', 'summary'],
-        threshold: 0.4,
+        threshold: 0.5,
       });
 
       if (query) {
@@ -92,15 +102,19 @@ const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
       </Head>
       <div className="container">
         <Nav />
+        {/* Header */}
         <div className="hero is-light">
           <div className="hero-body">
             <div className="container columns is-align-items-flex-end">
+              {/* Title & subtitle */}
               <div className="column">
                 <h1 className="title">Guides</h1>
                 <div className="p subtitle has-text-grey-light">Guides on how to use Doubtfire</div>
               </div>
+              {/* Search options */}
               <div className="column is-two-thirds">
                 <div className="columns is-align-items-flex-end">
+                  {/* Query text input */}
                   <div className="column">
                     <div className="field">
                       <div className="label">
@@ -111,13 +125,12 @@ const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
                           type="text"
                           className="input is-small"
                           placeholder="Type here to search"
-                          onChange={(e) => {
-                            setQuery(e.target.value.trim());
-                          }}
+                          onChange={(e) => setQuery(e.target.value.trim())}
                         />
                       </div>
                     </div>
                   </div>
+                  {/* Query audience selection */}
                   <div className="column is-narrow">
                     <div className="field">
                       <div className="label">
@@ -144,6 +157,7 @@ const GuidesPage: FC<Props> = ({ guides: allGuides }) => {
             </div>
           </div>
         </div>
+        {/* Guides */}
         {Meta.orderedAudiences
           .filter((a) => a in guides && guides[a].length > 0)
           .map((a, i) => (

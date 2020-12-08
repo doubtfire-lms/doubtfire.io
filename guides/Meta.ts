@@ -1,5 +1,3 @@
-// TODO: Document!
-
 /**
  * Audiences that a guide could be targeted at.
  */
@@ -14,12 +12,18 @@ export type RawGuideFrontMatter = {
   authors: string;
 };
 
+/**
+ * `RawGuideFrontMatter` parsed via `parseFrontMatter`.
+ */
 export type ParsedGuideFrontMatter = {
   title: string;
   summary: string;
   authors: string[];
 };
 
+/**
+ * Converts the specified `RawGuideFrontMatter` `raw` to `ParsedGuideFrontMatter`.
+ */
 export const parseFrontMatter = (raw: RawGuideFrontMatter): ParsedGuideFrontMatter => {
   return {
     ...raw,
@@ -28,7 +32,14 @@ export const parseFrontMatter = (raw: RawGuideFrontMatter): ParsedGuideFrontMatt
 };
 
 type Metadata = {
+  /**
+   * Map of GitHub usernames of post authors to their corresponding full names.
+   */
   authorNames: { [name: string]: string };
+
+  /**
+   * Singular & plural labels, and summaries for each audience.
+   */
   audienceLabels: {
     [audience in Audience]: {
       singular: string;
@@ -36,7 +47,15 @@ type Metadata = {
       summary: string | null;
     };
   };
+
+  /**
+   * The order in which audiences appear on the guides page.
+   */
   orderedAudiences: Audience[];
+
+  /**
+   * The order in which guides appear on the guides page.
+   */
   orderedGuides: string[];
 };
 
@@ -47,6 +66,7 @@ export default {
     'C-Blenco': 'Conor Blencowe',
     MattK18: 'Matthew Kramersh',
   },
+
   audienceLabels: {
     all: {
       singular: 'All',
@@ -76,7 +96,9 @@ export default {
       summary: null,
     },
   },
+
   orderedAudiences: ['all', 'student', 'staff', 'unit-chair', 'developer'],
+
   orderedGuides: [
     // all
     'glossary',

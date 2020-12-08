@@ -7,18 +7,20 @@ import { useRouter } from 'next/router';
  */
 const Nav: FC = () => {
   const router = useRouter();
-
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
   return (
     <nav className="navbar is-spaced">
+      {/* Left */}
       <div className="navbar-brand">
+        {/* Doubtfire logo */}
         <Link href="/">
           <a className="navbar-item">
             <img src="/images/logo/logo.svg" alt="Doubtfire Logo" />
             &nbsp; Doubtfire
           </a>
         </Link>
+        {/* Menu toggle */}
         <a
           role="button"
           className={`navbar-burger ${isMobileNavVisible ? 'is-active' : ''}`}
@@ -30,6 +32,7 @@ const Nav: FC = () => {
           <span aria-hidden="true"></span>
         </a>
       </div>
+      {/* Right: menu items */}
       <div className={`navbar-menu ${isMobileNavVisible ? 'is-active' : ''}`}>
         <div className="navbar-end">
           <Link href="/guides">
