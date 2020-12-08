@@ -8,6 +8,7 @@ import fs from 'fs/promises';
 import matter from 'gray-matter';
 
 import unified from 'unified';
+import rehypeRaw from 'rehype-raw';
 import unistVisit from 'unist-util-visit';
 import remarkSlug from 'remark-slug';
 import remarkHint from 'remark-hint';
@@ -109,7 +110,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     })
     .use(remarkBehead, { depth: 1 })
     .use(remarkHighlightJs)
-    .use(remark2rehype)
+    .use(remark2rehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
     .use(rehypeStringify);
 
   const processed = await processor.process(markdown);
