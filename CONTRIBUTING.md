@@ -32,7 +32,7 @@ that uses,
 
 ## Prerequisites
 
-1. [Node.js](https://nodejs.org/).
+1. [Node.js](https://nodejs.org/) `>= 14.x`.
 1. [Visual Studio Code](https://code.visualstudio.com/) with the following plugins,
    1. [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
    1. [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -89,6 +89,16 @@ wait  - compiling...
 event - build page: /next/dist/pages/_error
 event - compiled successfully
 ```
+
+### Publishing to GitHub Pages
+
+The [`pages`](.github/workflows/pages.yml) workflow is configured to build, export & push the website to GitHub Pages
+(i.e. the [`gh-pages`](https://github.com/RavinduL/doubtfire.io/tree/gh-pages) branch).
+
+To trigger this workflow,
+
+- (Preferred) Either push commits to the [`pages`](https://github.com/RavinduL/doubtfire.io/tree/pages) branch.
+- Or, manually trigger the workflow via [GitHub Actions](https://github.com/RavinduL/doubtfire.io/actions).
 
 ### Authoring a Guide
 
