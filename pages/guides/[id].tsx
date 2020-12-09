@@ -127,6 +127,40 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     .use(remark2rehype, { allowDangerousHtml: true })
     // Use literal HTML.
     .use(rehypeRaw)
+    // Prefix relative image and anchor URLs with the global prefix.
+    .use(() => {
+      return (tree) => {
+        /**
+         * Matches HTTP(S) URLs and protocol-relative URLs.
+         */
+        const absoluteURLPattern = /^https?:\/\/|^\/\//;
+
+        /**
+         * Prefixes the specified URL with the global prefix.
+         */
+        const prefixUrl = (url: string): string => {
+          return `${process.env['prefix']}/${url.replace(/^\/+/, '')}`;
+        };
+
+        unistVisit(tree, 'element', (node) => {
+          if (node.tagName === 'img') {
+            const properties = node.properties as { src: string };
+            const isAbsolute = absoluteURLPattern.test(properties.src);
+            if (!isAbsolute) {
+              properties.src = prefixUrl(properties.src);
+            }
+          } else if (node.tagName == 'a') {
+            const properties = node.properties as { href?: string };
+            if (properties.href) {
+              const isAbsolute = absoluteURLPattern.test(properties.href);
+              if (!isAbsolute) {
+                properties.href = prefixUrl(properties.href);
+              }
+            }
+          }
+        });
+      };
+    })
     // Stringify HTML.
     .use(rehypeStringify);
 

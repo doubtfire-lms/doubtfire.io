@@ -16,7 +16,7 @@ const Nav: FC = () => {
         {/* Doubtfire logo */}
         <Link href="/">
           <a className="navbar-item">
-            <img src="/images/logo/logo.svg" alt="Doubtfire Logo" />
+            <img src={`${process.env['prefix']}/images/logo/logo.svg`} alt="Doubtfire Logo" width="28" height="28" />
             &nbsp; Doubtfire
           </a>
         </Link>

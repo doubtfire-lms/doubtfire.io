@@ -15,7 +15,7 @@ const IndexPage: FC = () => {
           <div className="hero-body">
             <div className="container has-text-centered">
               <p>
-                <img src="/images/logo/logo.svg" alt="Doubtfire Logo" width="148" />
+                <img src={`${process.env['prefix']}/images/logo/logo.svg`} alt="Doubtfire Logo" />
               </p>
               <br />
               <h1 className="title is-1">Doubtfire</h1>
@@ -26,12 +26,12 @@ const IndexPage: FC = () => {
               <div className="buttons is-centered">
                 <Link href="/guides">
                   <a className="button">
-                    <img src="/images/book.svg" alt="Guides" width="18" />
+                    <img src={`${process.env['prefix']}/images/book.svg`} alt="Guides" width="18" height="18" />
                     &nbsp; Guides
                   </a>
                 </Link>
                 <a href="https://github.com/orgs/doubtfire-lms/" className="button" target="_blank">
-                  <img src="/images/github.svg" alt="GitHub" width="18" />
+                  <img src={`${process.env['prefix']}/images/github.svg`} alt="GitHub" width="18" height="18" />
                   &nbsp; GitHub
                 </a>
               </div>

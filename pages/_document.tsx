@@ -9,7 +9,7 @@ export default class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="shortcut icon" type="image/jpg" href="/images/logo/favicon.ico" />
+          <link rel="shortcut icon" type="image/jpg" href={`${process.env['prefix']}/images/logo/favicon.ico`} />
         </Head>
         <body>
           <Main />
