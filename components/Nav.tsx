@@ -38,6 +38,9 @@ const Nav: FC = () => {
           <Link href="/guides">
             <a className={`navbar-item ${router.pathname === '/guides' ? 'is-active' : ''}`}>Guides</a>
           </Link>
+          <a href="https://blog.doubtfire.io/" className="navbar-item">
+            Blog
+          </a>
           <a href="https://github.com/orgs/doubtfire-lms/" target="_blank" className="navbar-item">
             GitHub
           </a>

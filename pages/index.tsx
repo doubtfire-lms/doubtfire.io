@@ -30,6 +30,10 @@ const IndexPage: FC = () => {
                     &nbsp; Guides
                   </a>
                 </Link>
+                <a href="https://blog.doubtfire.io/" className="button">
+                  <img src={`${process.env['prefix']}/images/book.svg`} alt="Guides" width="18" height="18" />
+                  &nbsp; Blog
+                </a>
                 <a href="https://github.com/orgs/doubtfire-lms/" className="button" target="_blank">
                   <img src={`${process.env['prefix']}/images/github.svg`} alt="GitHub" width="18" height="18" />
                   &nbsp; GitHub
