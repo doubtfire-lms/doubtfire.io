@@ -153,7 +153,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
             const properties = node.properties as { href?: string };
             if (properties.href) {
               const isAbsolute = absoluteURLPattern.test(properties.href);
-              if (!isAbsolute) {
+              if (!properties.href.startsWith('#') && !isAbsolute) {
                 properties.href = prefixUrl(properties.href);
               }
             }
