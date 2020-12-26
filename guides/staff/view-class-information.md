@@ -22,7 +22,7 @@ The student list is broken down into a number of sections:
 
 ![Student List](/guides/view-class-information/list.png)
 
-## Search bar and filer
+## Search bar and filter
 
 The search bar allows you to search and filter for:
 
@@ -83,19 +83,13 @@ It is broken down into three panels shown below:
 
 ![Task List](/guides/view-class-information/task-list2.png)
 
-## Task List
+- **Task List**: The first panel, located on the left hand side, is the list of tasks in the unit. Selecting a task will
+  automatically update the shown task PDF and task details.
 
-The first panel, located on the left hand side, is the list of tasks in the unit. Selecting a task will automatically
-update the shown task PDF and task details.
+- **Task PDF**: The center panel displays the task sheet PDF which will be presented to students.
 
-## Task PDF
+- **Task Details**: The task details, located on the right panel, show the intended learning outcomes for the selected
+  task, the description, and key information such as the task level, target date, and due date (if applicable).
 
-The center panel displays the task sheet PDF which will be presented to students.
-
-## Task Details
-
-The task details, located on the right panel, show the intended learning outcomes for the selected task, the
-description, and key information such as the task level, target date, and due date (if applicable).
-
-?> **Note:** Task information can not be changed from the task list, it can be changed from the _Unit Administration_ ->
+**Note:** Task information can not be changed from the task list, it can be changed from the _Unit Administration_ ->
 _Task_ tab.

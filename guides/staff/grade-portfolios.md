@@ -14,7 +14,7 @@ steps to this process:
 1. View their portfolio
 1. Select a grade
 
-These steps are elaborated upon in the following sections.
+These steps are elaborated upon in the sections that follow.
 
 # Selecting the Student
 

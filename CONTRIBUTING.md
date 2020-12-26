@@ -224,10 +224,10 @@ To trigger this workflow,
 
 - The new guide should appear on the website after a refresh.
 
-   <details><summary>Example</summary>
+  <details><summary>Example</summary>
 
   ![Screenshot of the guides list of Doubtfire.io with the new guide focused](images/contrib-new-guide-list.png)
 
   ![Screenshot of the new guide on Doubtfire.io](images/contrib-new-guide-content.png)
 
-   </details>
+  </details>

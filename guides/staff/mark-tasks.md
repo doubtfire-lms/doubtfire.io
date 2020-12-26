@@ -4,10 +4,9 @@ summary: See how to mark student submissions
 authors: jakerenzella
 ---
 
-Marking student submissions in Doubtfire is done throughout the "Task Inbox" page. The Task Inbox is the default view
-after logging in to Doubtfire, and selecting a unit.
+Marking student submissions in Doubtfire is done throughout the "Task Inbox" page.
 
-1. Log in to Doubtfire and select the unit from the "Units You Teach" list:
+1. Log in to Doubtfire and select the unit from the "Units You Teach" list, visit its task inbox:
 
    ![Unit selection](/guides/mark-tasks/select-unit.png)
 

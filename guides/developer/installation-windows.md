@@ -60,7 +60,7 @@ Now that your Ubuntu distribution is configured, it's time to install the Doubtf
 2.  **Clone the Doubtfire repositories** by cloning from the Doubtfire GitHub repository links below using
     `git clone <repo_link>`.
 
-    NOTE: It is recommended that you first fork the repositories onto your own Github account, and clone from there.
+    **Note:** It is recommended that you first fork the repositories onto your own Github account, and clone from there.
     Please refer to the
     [guide on contributing](https://github.com/OnTrack-UG-Squad/doubtfire-api/blob/development/CONTRIBUTING.md#1-forking-and-cloning-the-repository)
     for detailed instructions.

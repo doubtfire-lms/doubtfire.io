@@ -38,13 +38,13 @@ tasks are complete.
 
 Most of the statistics can be broken down into 3 categories noted by the three-switch at the top-right.
 
-1. Building Icon - indicates the shown statistics are throughout the whole unit.
+1. **Building Icon** - indicates the shown statistics are throughout the whole unit.
 
-1. Pencil Icon - indicates the shown statistics are throughout an individual tutorial.
+1. **Pencil Icon** - indicates the shown statistics are throughout an individual tutorial.
 
    ![tutorial stats](/guides/unit-statistics/switch-view.png)
 
-1. Chart Icon - indicates the shown statistics are broken down by task.
+1. **Chart Icon** - indicates the shown statistics are broken down by task.
 
    ![Task Stats](/guides/unit-statistics/switch-view-2.png)
 

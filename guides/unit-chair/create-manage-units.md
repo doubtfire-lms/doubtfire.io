@@ -19,7 +19,7 @@ and log in to Doubtfire.
 
    ![Manage Units](/guides/create-manage-units/enter-name.png)
 
-1. After the unit is created, select the newely created unit from the list of units:
+1. After the unit is created, select the newly created unit from the list of units:
 
    ![Manage Units](/guides/create-manage-units/select-created-unit.png)
 
@@ -37,7 +37,7 @@ Enter all details:
 - Unit Description
 - Start Date
 - End Date
-- Active (Whether or not the unit will is open)
+- Active (Whether the unit is open)
 
 ![Manage Units](/guides/create-manage-units/unit-details.png)
 
@@ -59,7 +59,7 @@ Select the third tab: _staff_
 The staff for a unit include the unit chair, and tutors. These staff can easily be added to the unit by searching for
 the staff member's name, and then selecting the _Add Staff_ button.
 
-_Note:_ The search field will autocompelte the staff members name, if the staff member you are trying to assign to a
+**Note:** The search field will autocomplete the staff members name, if the staff member you are trying to assign to a
 unit is not appearing, ensure the name is spelled correctly, and that the user has previously added to the Doubtfire
 system. See the enrolling users guide for more details.
 
@@ -108,4 +108,5 @@ weakly (2/5) aligns with the _W_ (Writing) learning outcome. You can present a r
 
 # Groups
 
-See the "Student Management" guide for information on creating and managing student groups in Doubtfire.
+See the [Student Management guide](/guides/enrol-manage-students) for information on creating and managing student
+groups in Doubtfire.

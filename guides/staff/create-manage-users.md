@@ -7,7 +7,7 @@ authors: jakerenzella
 User accounts in Doubtfire include both students and staff accounts, and there are two ways to create user accounts --
 manually and batch.
 
-# Editing an Existing User:
+# Editing an Existing User
 
 Log in to Doubtfire and select _Manage Users_ from the Administration dropdown in the top right menu:
 
@@ -25,7 +25,7 @@ From this menu, you can edit the following fields:
 - Avatar
 - System Role (Student | Tutor | Convenor/Unit Chair | Administrator).
 
-# Creating a New User:
+# Creating a New User
 
 From the Manage Users page, click the _Add New User_ button on the bottom right to open the _Create User_ modal. This is
 identical to the edit user modal previously discussed, however you can also set the username of the account:

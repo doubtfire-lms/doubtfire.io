@@ -4,7 +4,7 @@ summary: See how to change your target grade in Doubtfire
 authors: jakerenzella
 ---
 
-In Doubtfire, your target grade indicates to both you and the teaching staff how you are looking to approach your unit
+In Doubtfire, your target grade indicates to both you and the teaching staff, how you are looking to approach your unit
 of study.
 
 There are four target grades:

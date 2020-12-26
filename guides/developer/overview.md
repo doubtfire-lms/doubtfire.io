@@ -36,11 +36,9 @@ students weekly tasks.
 Teachers are allowed to give feedback to students, so that students can revise their submission and re-submit. Students
 can request time extensions if they are running behind schedule on a particular task.
 
-A link to using some of the basic features for **staff** can be found
-[here](https://doubtfire-lms.github.io/doubtfire.io/articles/guides/tags/staff_guides/).
+A link to using some of the basic features for **staff** can be found [here](/guides#staff).
 
-A link to using some of the basic features for **students** can be found
-[here](https://doubtfire-lms.github.io/doubtfire.io/articles/guides/tags/student_guides/).
+A link to using some of the basic features for **students** can be found [here](/guides#student).
 
 ## Learning and Assessment
 
@@ -67,17 +65,17 @@ by staff as demonstrating the required knowledge.
 
 ## Burndown charts - An Agile approach
 
-A key principle of Agile software development methods is that they embrace change by allowing for adaptive, peri- odic
+A key principle of Agile software development methods is that they embrace change by allowing for adaptive, periodic
 adjustment of activities, resulting in robust and effective outcomes.
 
-A key driver of Agile development is the use of Burn down charts - a central requirement for the Doubtfire tool.
+A key driver of Agile development is the use of Burn down charts—a central requirement for the Doubtfire tool.
 
 Doubtfire allows teaching staff to outline the tasks students need to complete during the semester. Student are then
 able to monitor their progress against these tasks using burn down charts. The charts show the backlog of work remaining
 week by week, which decreases as work is completed.
 
 These charts give students a visual way to know how many tasks they need to complete over the semester, and estimate the
-relative complex- ity of those tasks – a skill which many seem to lack. Students should also be able to use the tool to
+relative complexity of those tasks—a skill which many seem to lack. Students should also be able to use the tool to
 determine whether they need to increase their rate of progress (velocity) and, if so, commit more time to the subject or
 take greater advantage of resources available to them. In addition to the simple scrum-style marking of tasks as
 completed, it was also seen that students could use the system to indicate if they were working on, or having trouble
@@ -86,7 +84,8 @@ size and complexity. A students projected completion should be recalculated as t
 
 ## Who developed it
 
-The main contributors of Doubtfire are Andrew Cain (@macite), Alex Cummaudo (@alexcu) and Jake Renzella (@jakerenzella)
+The main contributors of Doubtfire are Andrew Cain ([@macite](https://github.com/macite)), Alex Cummaudo
+([@alexcu](https://github.com/alexcu)) and Jake Renzella ([@jakerenzella](https://github.com/jakerenzella))
 
 ---
 
@@ -94,38 +93,39 @@ The main contributors of Doubtfire are Andrew Cain (@macite), Alex Cummaudo (@al
 
 ## Doubtfire Web
 
-Doubtfire Web is the front end - client side - and is written in Javascript, using [Angular](http://angularjs.org)
-application built using [Bootstrap](http://getbootstrap.com).
+Doubtfire Web is the front end (client side) and is written in Javascript, using [AngularJS](http://angularjs.org) and
+[Bootstrap](http://getbootstrap.com).
 
 ## Doubtfire API
 
-Doubtfire API is the backend - server side - and uses the Ruby on Rails framework.
+Doubtfire API is the backend (server side) and uses the [Ruby on Rails framework](https://rubyonrails.org).
 
 ![High Level Structure of Doubtfire](/guides/overview/high-level-structure.gif)
 
 Grape API is a Restful API. Access to the API via http verbs:
 
-- GET - read data
-- PUT - change data
-- POST - create data
-- DELETE - delete data
+- `GET` - read data
+- `PUT` - change data
+- `POST` - create data
+- `DELETE` - delete data
 
-Firstly we need to start the Rails server by navigating to the doubtfire-api folder and running:
+Firstly we need to start the Rails server by navigating to the `doubtfire-api` folder and running:
 
-    bundle exec rails s
+```shell
+bundle exec rails s
+```
 
 ![Starting the Rails server](/guides/overview/start-rails-server.png)
 
-Once you have Rail server running, navigate to 0.0.0.0:3000/api/docs/, it gives us access to the API endpoints.
+Once you have Rail server running, navigate to `localhost:3000/api/docs/`, it gives us access to the API endpoints.
 
 ![Doubtfire API documentation](/guides/overview/api-documentation.png)
 
-For example, clicking on "users" shows endpoints such as GET, POST, etc, which represent the same in the code
-users_api.rb
+For example, clicking on "users" shows endpoints such as `GET /api/users`, `POST /api/users`, etc,
 
 ![Users API](/guides/overview/users-api.jpg)
 
-The endpoints above (GET, POST, etc) are found in the code in users_api.rb, as below.
+The corresponding code can be found in the `users_api.rb` file,
 
 ![users_api.rb file](/guides/overview/users-api-ruby.jpg)
 
@@ -139,7 +139,7 @@ If we click on "Users" in the API documentation, it looks like this:
 
 ![Users](/guides/overview/users-api.jpg)
 
-We then want to click on "GET" (Get the list of users), which looks like this:
+We then want to click on `GET /api/users` (Get the list of users), which looks like this:
 
 ![Get the list of users](/guides/overview/get-users-endpoint.png)
 
@@ -148,7 +148,7 @@ click on "auth":
 
 ![Auth API](/guides/overview/auth-api.png)
 
-Then click on "POST" to sign in, using:
+Then click on `POST /api/auth` to sign in, using:
 
 ```
 username: aadmin
@@ -174,8 +174,8 @@ full list.
 
 Next, lets say we want to create a new user into the database.
 
-We should go to Users in the API, select "POST create new user", and populate the values for the new user. Also we
-should add the same auth_token we used when signing in, as below:
+We should go to Users in the API, select `POST /api/users`, and populate the values for the new user. Also we should add
+the same auth_token we used when signing in, as below:
 
 ![Creating a new user](/guides/overview/post-users-endpoint.jpg)
 
@@ -204,9 +204,6 @@ commonly used in Internet applications. In our case it’s OnTrack. Aim of angul
 developing by providing a framework for client side with MVC ( Model View Controller ) and MVVM ( Model View viewmodel
 ).
 
-Angular JS is a part of MEAN (Used to build dynamic web pages and applications) which contains MongoDB Data base,
-Express Java script web application server framework, Angular JS and Node JS server runtime environment.
-
 ### What does angular JS DO?
 
 The AngularJS framework works by first reading the Hypertext Markup Language (HTML) page, which has an additional custom
@@ -224,17 +221,6 @@ manually set within the code, or retrieved from static or dynamic JSON resources
 
 - to provide structure for the journey of building an application: from designing the UI, through writing the business
   logic, to testing.
-
-## NodeJS (front end - server)
-
-Node.js is an open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside of a
-browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running
-scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
-
-Node.js allows the creation of Web servers and networking tools using JavaScript and a collection of "modules" that
-handle various core functionalities. Modules are provided for file system I/O, networking (DNS, HTTP, TCP, TLS/SSL, or
-UDP), binary data (buffers), cryptography functions, data streams, and other core functions. Node.js's modules use an
-API designed to reduce the complexity of writing server applications.
 
 ## Ruby On Rails (back end)
 
@@ -352,14 +338,14 @@ simpler interface to the client.**
 
 ### Database and Object model mapping
 
-The database is found in **app > db > schema.rb**. It shows the current version of the database, which consists of the
-various create_table statements to create the database structure. Schema.rb tells us the different tables in the
-database and the values they contain.
+The database is found in `app/db/schema.rb`. It shows the current version of the database, which consists of the various
+create_table statements to create the database structure. Schema.rb tells us the different tables in the database and
+the values they contain.
 
 ![Schema.rb](/guides/overview/schema-ruby.jpg)
 
-Doubtfire uses the Object model, where all the objects are found in app > models folder. We can then map the "projects"
-table in schema.rb, to the project.rb object in the **app > models** folder. Whereas the "projects" table contains the
+Doubtfire uses the Object model, where all the objects are found in `app/models` folder. We can then map the "projects"
+table in schema.rb, to the project.rb object in the `app/models` folder. Whereas the "projects" table contains the
 definition of the attributes of the object, the project.rb object contains the functionality.
 
 ![Mapping of Projects Table (left) with Project Object (right)](/guides/overview/project-schema-to-object-mapping.jpg)
@@ -368,7 +354,7 @@ Doubtfire utilizes the migrations feature of Active Record to incrementally modi
 schema definition.
 
 To look into this further, one should look at the various tables in **schema.rb** and their corresponding mappings with
-their Object classes and class functions in the **app > models** folder.
+their Object classes and class functions in the `app/models` folder.
 
 ## Doubtfire-Web
 

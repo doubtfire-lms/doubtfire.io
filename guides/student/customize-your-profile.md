@@ -18,7 +18,7 @@ _profile_:
 
 ![Profile dropdown](/guides/customize-your-profile/profile-dropdown.png)
 
-The modal which appears will allow you to customize all profile fields in Doubtfire:
+The modal that appears allows customizing all profile fields in Doubtfire:
 
 ![Profile page](/guides/customize-your-profile/profile-page.png)
 

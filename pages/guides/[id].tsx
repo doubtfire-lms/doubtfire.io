@@ -34,6 +34,7 @@ import 'highlight.js/styles/default.css';
 import hljsLanguageShell from 'highlight.js/lib/languages/shell';
 import hljsLanguageBash from 'highlight.js/lib/languages/bash';
 import hljsLanguageMarkdown from 'highlight.js/lib/languages/markdown';
+import hljsLanguageSql from 'highlight.js/lib/languages/sql';
 
 type TocItem = {
   id: string;
@@ -184,6 +185,7 @@ const GuidePage: FC<Props> = (props) => {
     hljs.registerLanguage('shell', hljsLanguageShell);
     hljs.registerLanguage('bash', hljsLanguageBash);
     hljs.registerLanguage('markdown', hljsLanguageMarkdown);
+    hljs.registerLanguage('sql', hljsLanguageSql);
     hljs.initHighlighting();
   }, []);
 
