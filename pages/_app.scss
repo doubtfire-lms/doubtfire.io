@@ -43,8 +43,8 @@ html {
 .guide-content {
   @extend .content;
 
-  line-height: 1.8em;
-  font-size: 1.15em;
+  line-height: 1.7em;
+  font-size: 1.05em;
 
   .hint {
     @extend .box;
@@ -64,8 +64,10 @@ html {
   }
 
   pre {
+    @extend .p-0;
+    line-height: 1.3em;
     code.hljs {
-      @extend .p-0;
+      @extend .p-4;
       background-color: transparent;
     }
   }

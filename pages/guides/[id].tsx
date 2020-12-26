@@ -222,7 +222,9 @@ const GuidePage: FC<Props> = (props) => {
                   </ul>
                 </nav>
                 <h1 className="title is-2 mb-4">
-                  <span className="has-background-white">{props.title}</span>
+                  <a href="" className="has-background-white" style={{ color: 'inherit' }}>
+                    {props.title}
+                  </a>
                 </h1>
                 <p className="is-size-5 has-text-black">
                   <span className="has-background-white">
@@ -244,10 +246,10 @@ const GuidePage: FC<Props> = (props) => {
         {/* Guide */}
         <div className="columns is-centered px-5">
           <div className="column is-four-fifths pt-6">
-            <div className="columns is-multiline">
+            <div className="columns is-desktop">
               {/* Table of Contents */}
               {props.toc.length > 0 && (
-                <aside className="column is-full-mobile is-full-tablet is-one-quarter-desktop is-size-6">
+                <aside className="column is-full-mobile is-full-tablet is-one-quarter-desktop">
                   <div className="guide-toc">
                     <div className="columns is-gapless is-mobile is-tablet is-align-items-center">
                       <div className="column">
@@ -277,7 +279,7 @@ const GuidePage: FC<Props> = (props) => {
                 </aside>
               )}
               {/* Guide body */}
-              <div className="column">
+              <div className="column is-three-quarters-desktop">
                 <main className="guide-content" dangerouslySetInnerHTML={{ __html: props.html }}></main>
               </div>
             </div>
