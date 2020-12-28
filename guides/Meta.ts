@@ -65,6 +65,8 @@ export default {
     jakerenzella: 'Jake Renzella',
     'C-Blenco': 'Conor Blencowe',
     MattK18: 'Matthew Kramersh',
+    Justfeedme: 'Jacob Taylor',
+    jeevanFernandes: 'Jeevan Fernandes',
   },
 
   audienceLabels: {
@@ -125,5 +127,7 @@ export default {
     'overview',
     'installation-windows',
     'installation-mac',
+    'installation-ubuntu',
+    'installation-virtual-machine',
   ],
 } as Metadata;
