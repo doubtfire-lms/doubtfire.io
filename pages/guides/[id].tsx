@@ -246,7 +246,7 @@ const GuidePage: FC<Props> = (props) => {
         {/* Guide */}
         <div className="columns is-centered px-5">
           <div className="column is-four-fifths pt-6">
-            <div className="columns is-desktop">
+            <div className="columns is-desktop is-centered">
               {/* Table of Contents */}
               {props.toc.length > 0 && (
                 <aside className="column is-full-mobile is-full-tablet is-one-quarter-desktop">
@@ -267,7 +267,7 @@ const GuidePage: FC<Props> = (props) => {
                           <p
                             className="guide-toc-item"
                             key={`toc/${item.id}`}
-                            style={{ marginLeft: `${(item.depth - 1) * 1}em` }}>
+                            style={{ marginLeft: `${(item.depth - 1) * 0.75}em` }}>
                             <a href={`#${item.id}`} style={{ fontSize: '0.8em' }}>
                               {item.text}
                             </a>
