@@ -62,7 +62,7 @@ appropriate student:
 # View or Change Student Allocation
 
 The student class/tutorial allocation is listed in the "tutorial" column, with a dropdown box highlighting the currently
-assigned tutorial code. For example, in the image above, student_23 is enrollde in LA1-01 (Lab 1).
+assigned tutorial code. For example, in the image above, student_23 is enrolled in LA1-01 (Lab 1).
 
 To change this allocation, simply select the dropdown box and change the tutorial to one of the options presented:
 

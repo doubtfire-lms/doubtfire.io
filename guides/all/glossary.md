@@ -114,7 +114,7 @@ authors: jakerenzella
     <tr>
       <td class="has-text-right"><strong>Plagiarism</strong></td>
       <td>
-        In Doubtfire, plagiarism refers to a report containing information about a _possible_ case of student plagiarism.
+        In Doubtfire, plagiarism refers to a report containing information about a <em>possible</em> case of student plagiarism.
       </td>
     </tr>
     <tr>

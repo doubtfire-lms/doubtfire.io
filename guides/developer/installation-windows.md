@@ -92,16 +92,16 @@ step 3 to install the Doubtfire frontend.
 1. **In the new terminal, run the doubtfire-web setup** by changing directory to `~/Doubtfire/doubtfire-web` and
    executing the setup script.
 
-   ![Doubtfire set up](/guides/installation-windows/Doubtfire_one.PNG)
+   ![Doubtfire set up](/guides/installation-windows/Doubtfire_one.png)
 
 2. **Start the frontend** by executing npm start.
 
-   ![Start frontend](/guides/installation-windows/doubtfire_two.PNG)
+   ![Start frontend](/guides/installation-windows/doubtfire_two.png)
 
 3. **Verify the frontend is running** by navigating to `http://localhost:4200/`. You should see the Doubtfire login
    interface (as long as the backend is also running).
 
-   ![Setup doubtfire-api](/guides/installation-windows/doubtfire_three.PNG)
+   ![Setup doubtfire-api](/guides/installation-windows/doubtfire_three.png)
 
    To stop the server, open the terminal window and press `Ctrl + C`
 
@@ -115,17 +115,17 @@ editor you use. **Ensure you have the latest version of Windows 10 and Visual St
 
 1. **Install VS Code Server on Ubuntu.** This is as simple as running the command `code` inside of the terminal.
 
-   ![Install Server](/guides/installation-windows/doubtfire_four.PNG)
+   ![Install Server](/guides/installation-windows/doubtfire_four.png)
 
 2. **Open VS Code in the Doubtfire directory and configure.** Running `code .` will open VS Code in the directory you
    are currently in.
 
-   ![Open VS Code](/guides/installation-windows/doubtfire_five.PNG)
+   ![Open VS Code](/guides/installation-windows/doubtfire_five.png)
 
    This will open a new VS Code window in the Doubtfire directory. If prompted to install "WSL – Remote" click the
    install button (this may require a reload).
 
-   ![VS Code](/guides/installation-windows/doubtfire_six.PNG)
+   ![VS Code](/guides/installation-windows/doubtfire_six.png)
 
    You should now see the Doubtfire codebase! The bottom left hand corner should indicate that you are connected to
-   <img src="/guides/installation-windows/doubtfire_seven.PNG" alt="WSL" class="inline">
+   <img src="/guides/installation-windows/doubtfire_seven.png" alt="WSL" class="inline">

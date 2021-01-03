@@ -55,6 +55,15 @@ panel, and on the right hand side you will find:
 - Download Tasks
 - Upload All Tasks
 
+<div class="columns">
+<div class="column">
+
 ![Batch tasks](/guides/create-manage-tasks/export2.png)
 
+</div>
+<div class="column">
+
 ![Batch tasks](/guides/create-manage-tasks/export1.png)
+
+</div>
+</div>

@@ -236,11 +236,11 @@ Doubtfire is an open-source, innovative, learning management system designed to 
 
 Inside the website, you can find :
 
-    1.Installation guides for Doubtfire.
-    2.User guides.
-    3.Extend Doubtfire and Contributions.
+1. Installation guides for Doubtfire.
+2. User guides.
+3. Extend Doubtfire and Contributions.
 
-Link for the [Website](https://doubtfire-lms.github.io/doubtfire.io/)
+Link to the [Website](https://doubtfire-lms.github.io/doubtfire.io/)
 
 ### Getting started
 

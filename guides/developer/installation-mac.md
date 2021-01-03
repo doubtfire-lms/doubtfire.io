@@ -14,18 +14,6 @@ Once you have all of these steps complete you should be setup and ready to using
 
 ## 1. Install Homebrew and Homebrew Cask
 
-<!--
-  TODO: I doubt caskroom.io is the Homebrew Cask website; is this information up-to-date?
-
-  TODO: I reckon we could simply point to the installation documentation of the individual projects (e.g.
-  https://github.com/rbenv/rbenv#homebrew-on-macos) instead of repeating them here. That way, they'll always be
-  up-to-date.
-
-  TODO: The doubtfire.io middleman interface might not always be at 10.0.2.15:4567.
-
-  TODO: Update doubtfire.io installation instructions.
--->
-
 Install [Homebrew](https://brew.sh/) for easy package management, if you haven't already, as well as
 [Homebrew Cask](http://caskroom.io):
 
