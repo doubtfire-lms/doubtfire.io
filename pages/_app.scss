@@ -1,0 +1,104 @@
+// Necessary Bulma components.
+// https://bulma.io/documentation/customize/with-node-sass/
+@import 'bulma/sass/utilities/_all.sass';
+@import 'bulma/sass/base/_all.sass';
+@import 'bulma/sass/elements/box.sass';
+@import 'bulma/sass/elements/button.sass';
+@import 'bulma/sass/elements/container.sass';
+@import 'bulma/sass/elements/content.sass';
+// @import 'bulma/sass/elements/icon.sass';
+// @import 'bulma/sass/elements/image.sass';
+// @import 'bulma/sass/elements/notification.sass';
+// @import 'bulma/sass/elements/progress.sass';
+@import 'bulma/sass/elements/table.sass';
+// @import 'bulma/sass/elements/tag.sass';
+@import 'bulma/sass/elements/title.sass';
+@import 'bulma/sass/form/_all.sass';
+@import 'bulma/sass/components/breadcrumb.sass';
+// @import 'bulma/sass/components/card.sass';
+// @import 'bulma/sass/components/dropdown.sass';
+// @import 'bulma/sass/components/level.sass';
+// @import 'bulma/sass/components/media.sass';
+// @import 'bulma/sass/components/menu.sass';
+// @import 'bulma/sass/components/message.sass';
+// @import 'bulma/sass/components/modal.sass';
+@import 'bulma/sass/components/navbar.sass';
+// @import 'bulma/sass/components/pagination.sass';
+// @import 'bulma/sass/components/panel.sass';
+// @import 'bulma/sass/components/tabs.sass';
+@import 'bulma/sass/grid/columns.sass';
+// @import 'bulma/sass/grid/tiles.sass';
+@import 'bulma/sass/helpers/_all.sass';
+@import 'bulma/sass/layout/footer.sass';
+@import 'bulma/sass/layout/hero.sass';
+// @import 'bulma/sass/layout/section.sass';
+
+// Pattern.css
+@import 'pattern.css/pattern.scss';
+
+html {
+  overflow-y: auto;
+}
+
+.guide-content {
+  @extend .content;
+
+  line-height: 1.7em;
+  font-size: 1.05em;
+
+  .hint {
+    @extend .box;
+    @extend .p-3;
+
+    &.tip {
+      @extend .has-background-success-light;
+    }
+
+    &.warn {
+      @extend .has-background-warning-light;
+    }
+
+    &.error {
+      @extend .has-background-danger-light;
+    }
+  }
+
+  pre {
+    @extend .p-0;
+    line-height: 1.3em;
+    code.hljs {
+      @extend .p-4;
+      background-color: transparent;
+    }
+  }
+
+  img {
+    &:not(.inline) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:not(:first-child) {
+      @extend .mt-6;
+    }
+  }
+}
+
+.guide-toc {
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+
+  p.guide-toc-item {
+    &.is-active {
+      font-weight: bold;
+    }
+  }
+}

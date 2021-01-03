@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".next": true,
+    "out": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "markdown.extension.orderedList.marker": "one",
+  "markdown.extension.italic.indicator": "_",
+  "cSpell.words": ["Doubtfire"]
+}
