@@ -63,6 +63,7 @@ If not using the tools recommended above,
 
 ## Getting Started
 
+1. Setup your development environment by installing the [prerequisites](#prerequisites).
 1. Clone this repository, and `cd` into it.
 1. Run `npm install` to install dependencies.
 
@@ -70,9 +71,12 @@ If not using the tools recommended above,
 
 1. Run `npm run dev` to launch the Next.js development server, which should serve the website locally. A `localhost` URL
    will be logged to the console.
-1. Visit the URL in a web browser.
-1. Any subsequent changes to the TypeScript, React & SCSS sources of the website will cause the webpage to instantly
-   refresh its content.
+1. Open the URL in a web browser.
+1. Any changes to the TypeScript, React & SCSS sources of the website will cause the webpage to instantly refresh.
+1. Any changes to the guides (i.e. Markdown sources) of will appear following a manual browser refresh. Please read the
+   [Authoring a Guide](#authoring-a-guide) section for more information on authoring guides.
+
+<details><summary>Example</summary>
 
 The console session should look something like,
 
@@ -89,6 +93,10 @@ wait  - compiling...
 event - build page: /next/dist/pages/_error
 event - compiled successfully
 ```
+
+In this case, the URL is [`http://localhost:3000`](http://localhost:3000).
+
+</details>
 
 ### Publishing to GitHub Pages
 

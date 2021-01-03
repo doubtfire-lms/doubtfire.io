@@ -227,45 +227,16 @@ This will automatically run the angular 1 `grunt watch`, and the angular 9 `ng s
 
 You can then navigate to the Doubtfire web interface at [http://localhost:8000](http://localhost:8000/).
 
-## Installation of doubtfire.io
+# Installation of Doubtfire.io
 
-This middleman project contains pages that document the Doubtfire project - a task oriented system designed to help
-support frequent formative feedback.
-
-Doubtfire is an open-source, innovative, learning management system designed to put the student first.
-
-Inside the website, you can find :
-
-1. Installation guides for Doubtfire.
-2. User guides.
-3. Extend Doubtfire and Contributions.
-
-Link to the [Website](https://doubtfire-lms.github.io/doubtfire.io/)
-
-### Getting started
-
-Start by ensuring you have ruby on your system. You **must** install [rbenv](https://github.com/rbenv/rbenv) to keep
-your ruby versions under control. Refer to rbenv's [installation guide](https://github.com/rbenv/rbenv#installation) on
-how to do so.
-
-Ensure you have installed ruby version 2.4.3:
+Clone the Doubtfire.io project and change the working directory into it via,
 
 ```shell
-$ rbenv install 2.4.3
-$ rbenv rehash
+$ git clone https://github.com/doubtfire-lms/doubtfire.io.git
+
+$ cd ./doubtfire.io
 ```
 
-Then, install [bundler](https://bundler.io/) to sort out your ruby dependencies:
-
-```shell
-$ gem install bundler
-$ bundle install
-```
-
-Once successfully installed, you can start the server using
-
-```shell
-bundle exec middleman serve
-```
-
-Then, navigate to [http://localhost:4567](http://localhost:4567/) using Firefox
+Then, follow the instructions in the
+["Getting Started" section of its `CONTRIBUTING.md` file](https://github.com/doubtfire-lms/doubtfire.io/blob/master/CONTRIBUTING.md#getting-started)
+to setup the project and its development environment, locally.

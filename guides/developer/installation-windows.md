@@ -61,9 +61,7 @@ Now that your Ubuntu distribution is configured, it's time to install the Doubtf
     `git clone <repo_link>`.
 
     **Note:** It is recommended that you first fork the repositories onto your own Github account, and clone from there.
-    Please refer to the
-    [guide on contributing](https://github.com/OnTrack-UG-Squad/doubtfire-api/blob/development/CONTRIBUTING.md#1-forking-and-cloning-the-repository)
-    for detailed instructions.
+    Please refer to the `CONTRIBUTING.md` file of each project for detailed instructions.
 
     - **doubtfire-api:** <https://github.com/doubtfire-lms/doubtfire-api.git>
     - **doubtfire-web:** <https://github.com/doubtfire-lms/doubtfire-web.git>
@@ -107,7 +105,13 @@ step 3 to install the Doubtfire frontend.
 
    Continue to step 4 for information regarding development with WSL.
 
-# Step 4: Developing with WSL
+# Step 4: Setup Doubtfire.io
+
+Doubtfire.io is the Doubtfire documentation project. Please refer to the
+["Getting Started" section of its `CONTRIBUTING.md` file](https://github.com/doubtfire-lms/doubtfire.io/blob/master/CONTRIBUTING.md#getting-started)
+to setup the project and its development environment, locally.
+
+# Step 5: Developing with WSL
 
 To avoid any errors between the Windows filesystem and Linux filesystem when editing, Microsoft has implemented features
 into Windows and Visual Studio Code itself to prevent corruption of the Linux subsystem, therefore VS Code must be the
