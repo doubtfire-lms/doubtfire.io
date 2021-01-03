@@ -25,6 +25,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import remarkHighlightJs from 'remark-highlight.js';
 import remarkExternalLinks from 'remark-external-links';
+import rehypeMinifyWhitespace from 'rehype-minify-whitespace';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
 
 // Highlight.js imports.
@@ -162,7 +163,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         });
       };
     })
-    // Stringify HTML.
+    // Minify & stringify HTML.
+    .use(rehypeMinifyWhitespace)
     .use(rehypeStringify);
 
   const processed = await processor.process(markdown);
