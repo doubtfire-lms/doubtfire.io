@@ -25,6 +25,7 @@ import rehypeStringify from 'rehype-stringify';
 import remarkA11yEmoji from '@fec/remark-a11y-emoji';
 import remarkHighlightJs from 'remark-highlight.js';
 import remarkExternalLinks from 'remark-external-links';
+import rehypeRemoveComments from 'rehype-remove-comments';
 import rehypeMinifyWhitespace from 'rehype-minify-whitespace';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
 
@@ -163,7 +164,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         });
       };
     })
-    // Minify & stringify HTML.
+    // Remove comments, minify & stringify HTML.
+    .use(rehypeRemoveComments)
     .use(rehypeMinifyWhitespace)
     .use(rehypeStringify);
 
