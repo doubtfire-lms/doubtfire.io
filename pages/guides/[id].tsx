@@ -130,14 +130,9 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     .use(remark2rehype, { allowDangerousHtml: true })
     // Use literal HTML.
     .use(rehypeRaw)
-    // Prefix relative image and anchor URLs with the global prefix.
+    // Prefix "root-relative" image and anchor URLs, with the global prefix.
     .use(() => {
       return (tree) => {
-        /**
-         * Matches HTTP(S) URLs and protocol-relative URLs.
-         */
-        const absoluteURLPattern = /^https?:\/\/|^\/\//;
-
         /**
          * Prefixes the specified URL with the global prefix.
          */
@@ -148,17 +143,13 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
         unistVisit(tree, 'element', (node) => {
           if (node.tagName === 'img') {
             const properties = node.properties as { src: string };
-            const isAbsolute = absoluteURLPattern.test(properties.src);
-            if (!isAbsolute) {
+            if (properties.src && properties.src.startsWith('/')) {
               properties.src = prefixUrl(properties.src);
             }
           } else if (node.tagName == 'a') {
             const properties = node.properties as { href?: string };
-            if (properties.href) {
-              const isAbsolute = absoluteURLPattern.test(properties.href);
-              if (!properties.href.startsWith('#') && !isAbsolute) {
-                properties.href = prefixUrl(properties.href);
-              }
+            if (properties.href && properties.href.startsWith('/')) {
+              properties.href = prefixUrl(properties.href);
             }
           }
         });
