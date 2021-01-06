@@ -252,7 +252,7 @@ const GuidePage: FC<Props> = (props) => {
                       </div>
                       <div className="column is-narrow is-hidden-desktop">
                         <button className="button is-small" onClick={() => setIsMobileTocVisible((v) => !v)}>
-                          {isMobileTocVisible ? '🡡' : '🡣'}
+                          {isMobileTocVisible ? '🔼' : '🔽'}
                         </button>
                       </div>
                     </div>
