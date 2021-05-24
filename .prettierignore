@@ -1,0 +1,7 @@
+node_modules
+
+# Next.js runtime cache.
+.next
+
+# Next.js static site output.
+out
