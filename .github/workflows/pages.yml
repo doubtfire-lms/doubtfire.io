@@ -51,6 +51,7 @@ jobs:
           cd gh-pages
           rm -rf *
           mv ../pages/out/** .
+          touch .nojekyll
 
           git add .
           git config --local user.email "actions@users.noreply.github.com"
