@@ -52,6 +52,7 @@ jobs:
           rm -rf *
           mv ../pages/out/** .
           touch .nojekyll
+          echo 'doubtfire.io' >CNAME
 
           git add .
           git config --local user.email "actions@users.noreply.github.com"
