@@ -20,7 +20,7 @@ const IndexPage: FC = () => {
               <br />
               <h1 className="title is-1">Doubtfire</h1>
               <p className="subtitle">
-                An innovative, open-source, learning management system designed to enhance student engagement and learning.
+                An innovative, open-source learning management system designed to enhance student engagement and learning.
               </p>
               <p> <img src={`${process.env['prefix']}/images/hero.png`} alt="Doubtfire Hero Image" /></p>
               <br />
